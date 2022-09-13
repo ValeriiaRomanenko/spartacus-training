@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
-import { AuthConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
+import { AuthConfig, CmsConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
 import { defaultCmsContentProviders, layoutConfig, mediaConfig } from '@spartacus/storefront';
 
 import { environment } from '../../environments/environment';
+import { stCmsComponentsConfig } from './config/ofmp-cms-components.config';
 
 @NgModule({
   declarations: [],
@@ -45,10 +46,14 @@ import { environment } from '../../environments/environment';
         fallbackLang: 'en'
       }
     }),
+    provideConfig(<CmsConfig>{
+      cmsComponents: stCmsComponentsConfig
+    }),
     provideConfig(<FeaturesConfig>{
       features: {
         level: '4.3'
       }
-    })]
+    })
+  ]
 })
 export class SpartacusConfigurationModule { }

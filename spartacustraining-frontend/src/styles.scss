@@ -2,3 +2,15 @@
 
 $styleVersion: 4.3;
 @import '~@spartacus/styles/index';
+@import "styles/st/index";
+
+body {
+  --cx-color-primary: #8B8B81;
+  --cx-color-secondary: #8B8B81;
+  --cx-color-text: #5c6f68;
+  --cx-color-background: #F5F5F5;
+  --cx-color-dark: #555555;
+  --cx-page-width-max: 1440px;
+  background-color: $cultured !important;
+  font-family: $font-family-brand;
+}
