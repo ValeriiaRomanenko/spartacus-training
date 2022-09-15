@@ -15,6 +15,7 @@ import {
   declarations: [],
   imports: [
     CommonModule,
+    RegisterModule,
     SharedModule,
     RegisterModule,
     LayoutModule,
