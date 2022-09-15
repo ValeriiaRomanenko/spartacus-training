@@ -32,8 +32,6 @@ export class StCartActionsComponent implements OnDestroy {
 
   iconTypes = StIconTypes;
 
-  iconTypes = StIconTypes;
-
   entries$: Observable<OrderEntry[] | undefined> =
     this._orderEntriesContext$.pipe(
       switchMap(
