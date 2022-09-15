@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegisterModule, StCartModule } from '../pages';
+import { RegisterModule, StCartModule, StOrderSummaryModule } from '../pages';
 import { SharedModule } from "../shared/shared.module";
 import { LayoutModule } from "../layout/layout.module";
 
@@ -13,7 +13,8 @@ import { LayoutModule } from "../layout/layout.module";
     RegisterModule,
     LayoutModule,
     RegisterModule,
-    StCartModule
+    StCartModule,
+    StOrderSummaryModule
   ]
 })
 export class SpartacusTrainingModule { }
