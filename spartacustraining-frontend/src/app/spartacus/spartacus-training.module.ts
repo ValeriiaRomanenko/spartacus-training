@@ -13,10 +13,9 @@ import {
   declarations: [],
   imports: [
     CommonModule,
+    RegisterModule,
     SharedModule,
-    RegisterModule,
     LayoutModule,
-    RegisterModule,
     StCartModule,
     StOrderSummaryModule,
     StPlpModule

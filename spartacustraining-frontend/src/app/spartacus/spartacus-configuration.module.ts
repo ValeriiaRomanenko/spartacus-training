@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import {
+  AuthConfig,
+  CmsConfig,
+  FeaturesConfig,
+  I18nConfig,
+  OccConfig,
+  provideConfig,
+  SiteContextConfig
+} from '@spartacus/core';
+import {
   defaultCmsContentProviders,
   DIALOG_TYPE,
   LayoutConfig,
   layoutConfig,
   mediaConfig
 } from '@spartacus/storefront';
-import { AuthConfig, CmsConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
-
 import { environment } from '../../environments/environment';
 import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
 import { stCmsComponentsConfig } from "./config/st-cms-components.config";
@@ -58,9 +65,6 @@ import { StRegisterModalComponent } from "../pages/register";
       },
       layoutSlots: stLayoutSlotsConfig,
     }),
-    // provideConfig(<LayoutConfig>{
-    //   layoutSlots: stLayoutSlotsConfig
-    // }),
     provideConfig(<I18nConfig>{
       i18n: {
         resources: translations,

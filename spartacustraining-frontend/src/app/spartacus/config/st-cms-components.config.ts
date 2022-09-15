@@ -19,6 +19,9 @@ export const stCmsComponentsConfig = {
   ProductGridComponent: {
     component: StProductListComponent
   },
+  CMSProductListComponent: {
+    component: StProductListComponent
+  },
   ProductRefinementComponent: {
     component: StRefinementFacetComponent
   },
