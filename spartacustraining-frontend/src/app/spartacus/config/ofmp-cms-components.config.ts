@@ -1,5 +1,6 @@
 import { StRegisterCustomerComponent } from '../../pages/register';
 import { StCartComponent } from '../../pages/cart/containers';
+import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -7,5 +8,8 @@ export const stCmsComponentsConfig = {
   },
   CartComponent: {
     component: StCartComponent
+  },
+  CartTotalsComponent: {
+    component: StOrderSummaryComponent
   }
 }

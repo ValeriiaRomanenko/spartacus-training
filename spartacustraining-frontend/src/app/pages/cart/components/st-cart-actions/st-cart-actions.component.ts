@@ -24,10 +24,10 @@ export class StCartActionsComponent implements OnDestroy {
   private _subscription = new Subscription();
   private _orderEntriesContext$: Observable<OrderEntriesContext | undefined> = this._contextService.get<OrderEntriesContext>(ORDER_ENTRIES_CONTEXT);
 
-  @ViewChild('element') element: ElementRef;
+  @ViewChild('element') element: ElementRef | undefined;
 
   @Input()
-  cart$: Observable<Cart>;
+  cart$: Observable<Cart> | undefined;
 
   entries$: Observable<OrderEntry[] | undefined> =
     this._orderEntriesContext$.pipe(
