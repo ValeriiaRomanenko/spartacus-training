@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
   ActiveFacetsModule,
-  AddToCartModule, AddToWishListModule, FacetListModule,
+  AddToCartModule,
+  AddToWishListModule,
+  FacetListModule,
   IconModule,
   ListNavigationModule,
   MediaModule,
@@ -21,12 +23,9 @@ import {
   StProductScrollComponent
 } from './components';
 import { StRefinementFacetComponent } from './containers';
-import {SharedModule} from "../../shared/shared.module";
-import {
-    ProductVariantSizeSelectorModule,
-    ProductVariantStyleSelectorModule
-} from "@spartacus/product/variants/components";
-import {CartQuickOrderFormModule} from "@spartacus/cart/quick-order/components";
+import { SharedModule } from "../../shared/shared.module";
+import { ProductVariantSizeSelectorModule, ProductVariantStyleSelectorModule } from "@spartacus/product/variants/components";
+import { CartQuickOrderFormModule } from "@spartacus/cart/quick-order/components";
 
 @NgModule({
   declarations: [
