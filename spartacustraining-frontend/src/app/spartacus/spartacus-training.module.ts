@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegisterModule, StCartModule, StOrderSummaryModule } from '../pages';
+import {
+  RegisterModule,
+  StCartModule,
+  StOrderSummaryModule,
+  StPlpModule
+} from '../pages';
 
 @NgModule({
   declarations: [],
@@ -8,7 +13,8 @@ import { RegisterModule, StCartModule, StOrderSummaryModule } from '../pages';
     CommonModule,
     RegisterModule,
     StCartModule,
-    StOrderSummaryModule
+    StOrderSummaryModule,
+    StPlpModule
   ]
 })
 export class SpartacusTrainingModule { }
