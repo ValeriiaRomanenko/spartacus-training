@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RegisterModule, StCartModule, StOrderSummaryModule } from '../pages';
 import { SharedModule } from "../shared/shared.module";
 import { LayoutModule } from "../layout/layout.module";
-import {RegisterModule, StCartModule, StOrderSummaryModule} from '../pages';
 
 @NgModule({
   declarations: [],
