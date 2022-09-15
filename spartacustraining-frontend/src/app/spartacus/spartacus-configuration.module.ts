@@ -17,9 +17,9 @@ import {
   mediaConfig
 } from '@spartacus/storefront';
 import { environment } from '../../environments/environment';
-import { StRegisterModalComponent } from "../pages/register";
-import { stCmsComponentsConfig } from './config/st-cms-components.config';
 import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
+import { stCmsComponentsConfig } from "./config/st-cms-components.config";
+import { StRegisterModalComponent } from "../pages/register";
 
 @NgModule({
   declarations: [],
@@ -65,6 +65,9 @@ import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
       },
       layoutSlots: stLayoutSlotsConfig,
     }),
+    // provideConfig(<LayoutConfig>{
+    //   layoutSlots: stLayoutSlotsConfig
+    // }),
     provideConfig(<I18nConfig>{
       i18n: {
         resources: translations,
