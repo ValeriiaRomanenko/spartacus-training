@@ -10,9 +10,9 @@ import {
 import { AuthConfig, CmsConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
 
 import { environment } from '../../environments/environment';
-import { StRegisterModalComponent } from "../pages/register";
-import { stCmsComponentsConfig } from './config/st-cms-components.config';
 import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
+import { stCmsComponentsConfig } from "./config/st-cms-components.config";
+import { StRegisterModalComponent } from "../pages/register";
 
 @NgModule({
   declarations: [],
@@ -55,8 +55,12 @@ import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
           component: StRegisterModalComponent,
           dialogType: DIALOG_TYPE.POPOVER_CENTER_BACKDROP,
         },
-      }
+      },
+      layoutSlots: stLayoutSlotsConfig,
     }),
+    // provideConfig(<LayoutConfig>{
+    //   layoutSlots: stLayoutSlotsConfig
+    // }),
     provideConfig(<I18nConfig>{
       i18n: {
         resources: translations,
