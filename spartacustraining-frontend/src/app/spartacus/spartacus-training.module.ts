@@ -8,6 +8,7 @@ import {RegisterModule, StCartModule, StOrderSummaryModule} from '../pages';
   declarations: [],
   imports: [
     CommonModule,
+    RegisterModule,
     SharedModule,
     RegisterModule,
     LayoutModule,
