@@ -1,24 +1,21 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {BehaviorSubject, Observable, Subscription} from "rxjs";
-import {ProductSearchPage} from "@spartacus/core";
-import {PageLayoutService, ProductListComponentService, ViewConfig, ViewModes} from '@spartacus/storefront';
-import {take} from "rxjs/operators";
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ProductSearchPage } from '@spartacus/core';
+import { PageLayoutService, ProductListComponentService, ViewConfig, ViewModes } from '@spartacus/storefront';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-st-product-list',
+  selector: 'st-product-list',
   templateUrl: './st-product-list.component.html',
   styleUrls: ['./st-product-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StProductListComponent implements OnInit, OnDestroy {
 
-  private subscription = new Subscription();
+  private _subscription = new Subscription();
 
-  isInfiniteScroll: boolean;
-
-  model$: Observable<ProductSearchPage> =
-    this.productListComponentService.model$;
-
+  isInfiniteScroll: boolean = this.scrollConfig.view?.infiniteScroll?.active;
+  model$: Observable<ProductSearchPage> = this.productListComponentService.model$;
   viewMode$ = new BehaviorSubject<ViewModes>(ViewModes.Grid);
   ViewModes = ViewModes;
 
@@ -26,12 +23,10 @@ export class StProductListComponent implements OnInit, OnDestroy {
     private pageLayoutService: PageLayoutService,
     private productListComponentService: ProductListComponentService,
     public scrollConfig: ViewConfig
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.isInfiniteScroll = this.scrollConfig.view?.infiniteScroll?.active;
-
-    this.subscription.add(
+    this._subscription.add(
       this.pageLayoutService.templateName$
         .pipe(take(1))
         .subscribe((template) => {
@@ -53,7 +48,6 @@ export class StProductListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this._subscription.unsubscribe();
   }
-
 }

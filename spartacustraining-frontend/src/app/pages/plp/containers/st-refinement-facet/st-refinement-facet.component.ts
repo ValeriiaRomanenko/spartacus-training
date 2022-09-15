@@ -4,7 +4,7 @@ import { asapScheduler, BehaviorSubject, interval, Observable, of } from 'rxjs';
 import { delayWhen, observeOn, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-st-refinement-facet',
+  selector: 'st-refinement-facet',
   templateUrl: './st-refinement-facet.component.html',
   styleUrls: ['./st-refinement-facet.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { AuthConfig, CmsConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
-import { defaultCmsContentProviders, layoutConfig, mediaConfig } from '@spartacus/storefront';
+import { defaultCmsContentProviders, LayoutConfig, layoutConfig, mediaConfig } from '@spartacus/storefront';
 
 import { environment } from '../../environments/environment';
-import { stCmsComponentsConfig } from './config/ofmp-cms-components.config';
+import { stCmsComponentsConfig } from './config/st-cms-components.config';
+import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
 
 @NgModule({
   declarations: [],
@@ -48,6 +49,9 @@ import { stCmsComponentsConfig } from './config/ofmp-cms-components.config';
     }),
     provideConfig(<CmsConfig>{
       cmsComponents: stCmsComponentsConfig
+    }),
+    provideConfig(<LayoutConfig>{
+      layoutSlots: stLayoutSlotsConfig
     }),
     provideConfig(<FeaturesConfig>{
       features: {
