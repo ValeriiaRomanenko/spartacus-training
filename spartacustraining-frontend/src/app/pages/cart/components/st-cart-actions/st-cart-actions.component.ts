@@ -28,9 +28,7 @@ export class StCartActionsComponent implements OnDestroy {
   @ViewChild('element') element: ElementRef | undefined;
 
   @Input()
-  cart$: Observable<Cart> | undefined;
-
-  iconTypes = StIconTypes;
+  cart$: Observable<Cart>;
 
   iconTypes = StIconTypes;
 
