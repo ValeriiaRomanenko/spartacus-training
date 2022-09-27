@@ -1,0 +1,78 @@
+<div class="st-cart mb-4">
+  <ng-container *ngIf="comparisonProducts$ | async as comparisonProducts; else loading">
+
+    <div *ngIf="comparisonProducts.products" class="comparisontable">
+      <ul class="row">
+        <li class="legend"> </li>
+        <li class="property" *ngFor="let product of comparisonProducts.products">
+          <button *ngIf="product.code"
+                  class=" btn-block btn-primary btn remove"
+                  type="button"
+                  (click)="deleteFromComparison(product.code)"
+          >
+            {{ 'remove product' }}
+          </button>
+        </li>
+      </ul>
+      <ul  *ngIf="comparisonProducts.products" class="row">
+        <li class="legend">Image</li>
+        <li class="property" *ngFor="let product of comparisonProducts.products">
+          <span *ngIf="getImage(product) as image">
+            <img src="{{baseUrl}}{{image}}" alt="{{ product.name }}" (click)="navigateToProduct(product)"
+            />
+          </span>
+        </li>
+      </ul>
+
+      <ul *ngIf="comparisonProducts.products" class="row">
+        <li class="legend">Name</li>
+        <li class="property" *ngFor="let product of comparisonProducts.products">{{product.name}}</li>
+      </ul>
+
+      <ul  *ngIf="comparisonProducts.products" class="row">
+        <li class="legend">Code</li>
+        <li class="property" *ngFor="let product of comparisonProducts.products">{{product.code}}</li>
+      </ul>
+
+      <ul class="row" *ngFor="let classification of comparisonProducts.classifications">
+        <li class="legend">{{classification.name}}</li>
+        <ng-container *ngIf="classification.code">
+          <ng-container *ngFor="let product of comparisonProducts.products">
+            <li class="property" *ngIf="containsClassification(product, classification?.code); else empty_content">
+              <ng-container *ngFor="let productClass of product.classifications">
+                <ng-container *ngIf="productClass.code==classification.code">
+                  <div class="featureContainer" *ngFor="let feature of productClass.features">
+                    <h3>{{feature.name}}</h3>
+                    <ul class="comparison-value">
+                      <li *ngFor="let featureValue of feature?.featureValues">
+                        {{ featureValue?.value }}
+                      </li>
+                    </ul>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ul>
+
+      <ul *ngIf="comparisonProducts.products" class="row">
+        <li class="legend">Price</li>
+        <li class="property" *ngFor="let product of comparisonProducts.products">{{product.price?.formattedValue}}</li>
+      </ul>
+
+    </div>
+
+    <div *ngIf="!comparisonProducts.products" class="empty">
+      <h1>Comparison list is empty.</h1>
+    </div>
+
+  </ng-container>
+
+  <ng-template #empty_content> <li class="property empty" style="color: red">Empty</li> </ng-template>
+
+  <ng-template #loading>
+    <div class="lds-dual-ring"></div>
+  </ng-template>
+
+</div>
