@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import {
   RegisterModule,
   StCartModule,
-  StCheckoutModule,
   StComparisonModule,
+  StCheckoutModule,
   StOrderSummaryModule,
   StPlpModule
 } from '../pages';
@@ -20,9 +20,9 @@ import { LayoutModule } from "../layout/layout.module";
     LayoutModule,
     StCartModule,
     StOrderSummaryModule,
-    StPlpModule,
     StComparisonModule,
-    StCheckoutModule
+    StCheckoutModule,
+    StPlpModule,
   ]
 })
 export class SpartacusTrainingModule { }
