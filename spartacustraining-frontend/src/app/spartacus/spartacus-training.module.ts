@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import {
   RegisterModule,
   StCartModule,
-  StComparisonModule,
   StCheckoutModule,
+  StComparisonModule,
   StOrderSummaryModule,
   StPlpModule
 } from '../pages';
