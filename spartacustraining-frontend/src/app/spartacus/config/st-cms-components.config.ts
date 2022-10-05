@@ -8,6 +8,7 @@ import { AddToCartComponent } from "@spartacus/storefront";
 import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipping-address/containers';
 import { StCheckoutDeliveryModeComponent } from 'src/app/pages/checkout/delivery-mode/containers';
 import { StPaymentDetailsComponent } from 'src/app/pages/checkout/payment-details/containers';
+import { StReviewOrderComponent } from 'src/app/pages/checkout/review-order/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -54,5 +55,8 @@ export const stCmsComponentsConfig = {
   },
   CheckoutPaymentDetails: {
     component: StPaymentDetailsComponent
+  },
+  CheckoutReviewOrder: {
+    component: StReviewOrderComponent
   }
 }
