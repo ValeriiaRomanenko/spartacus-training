@@ -2,6 +2,7 @@ import { StRegisterCustomerComponent } from '../../pages/register';
 import { StCartComponent } from '../../pages/cart/containers';
 import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 import { StProductListComponent, StRefinementFacetComponent } from '../../pages/plp/containers';
+import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipping-address/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -18,5 +19,8 @@ export const stCmsComponentsConfig = {
   },
   ProductRefinementComponent: {
     component: StRefinementFacetComponent
+  },
+  CheckoutShippingAddress: {
+    component: StCheckoutShippingAddressComponent
   }
 }
