@@ -3,6 +3,7 @@ import { StCartComponent } from '../../pages/cart/containers';
 import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 import { StProductListComponent, StRefinementFacetComponent } from '../../pages/plp/containers';
 import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipping-address/containers';
+import { StCheckoutDeliveryModeComponent } from 'src/app/pages/checkout/delivery-mode/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -22,5 +23,8 @@ export const stCmsComponentsConfig = {
   },
   CheckoutShippingAddress: {
     component: StCheckoutShippingAddressComponent
+  },
+  CheckoutDeliveryMode: {
+    component: StCheckoutDeliveryModeComponent
   }
 }
