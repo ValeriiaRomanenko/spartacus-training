@@ -4,9 +4,9 @@ import { StSearchBoxComponent, StLoginComponent } from "../../shared";
 import { StMiniCartComponent } from "../../shared/st-mini-cart/st-mini-cart.component";
 import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 import { StProductListComponent, StRefinementFacetComponent } from '../../pages/plp/containers';
-import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipping-address/containers';
 import { AddToCartComponent } from "@spartacus/storefront";
 import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipping-address/containers';
+import { StCheckoutDeliveryModeComponent } from 'src/app/pages/checkout/delivery-mode/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -47,5 +47,8 @@ export const stCmsComponentsConfig = {
   },
   CheckoutShippingAddress: {
     component: StCheckoutShippingAddressComponent
+  },
+  CheckoutDeliveryMode: {
+    component: StCheckoutDeliveryModeComponent
   }
 }
