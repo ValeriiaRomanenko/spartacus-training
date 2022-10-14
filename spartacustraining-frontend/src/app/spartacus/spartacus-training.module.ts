@@ -6,7 +6,8 @@ import {
   StCheckoutModule,
   StComparisonModule,
   StOrderSummaryModule,
-  StPlpModule
+  StPlpModule,
+  Test1cmsModule
 } from '../pages';
 
 @NgModule({
@@ -18,7 +19,8 @@ import {
     StOrderSummaryModule,
     StPlpModule,
     StComparisonModule,
-    StCheckoutModule
+    StCheckoutModule,
+    Test1cmsModule
   ]
 })
 export class SpartacusTrainingModule { }

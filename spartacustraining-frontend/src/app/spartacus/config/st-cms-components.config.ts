@@ -6,6 +6,7 @@ import { StCheckoutShippingAddressComponent } from 'src/app/pages/checkout/shipp
 import { StCheckoutDeliveryModeComponent } from 'src/app/pages/checkout/delivery-mode/containers';
 import { StPaymentDetailsComponent } from 'src/app/pages/checkout/payment-details/containers';
 import { StReviewOrderComponent } from 'src/app/pages/checkout/review-order/containers';
+import { StTest1cmsComponent } from '../../pages/test1cms/containers/st-test1cms/st-test1cms.component';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
@@ -34,5 +35,8 @@ export const stCmsComponentsConfig = {
   },
   CheckoutReviewOrder: {
     component: StReviewOrderComponent
+  },
+  test1cmsComponent: {
+    component: StTest1cmsComponent
   }
 }

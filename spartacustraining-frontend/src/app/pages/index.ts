@@ -4,3 +4,4 @@ export * from './order-summary/st-order-summary.module';
 export * from './plp/st-plp.module';
 export * from './comparison/st-comparison.module';
 export * from './checkout/st-checkout.module';
+export * from './test1cms/test1cms.module';
