@@ -1,0 +1,29 @@
+<div *ngIf="pageData$ | async as data"
+     class="modal-dialog modal-dialog-scrollable"
+     [cxFocus]="focusConfig"
+     (esc)="dismissModal('Escape pressed')"
+>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">{{ data.title }}</h2>
+
+      <button type="button" class="close" data-dismiss="modal" (click)="dismissModal('Cross click')">
+        <span aria-hidden="true">
+            <cx-icon [type]="iconTypes.CLOSE"></cx-icon>
+          </span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <ng-container *ngFor="let component of components$ | async">
+        <ng-template
+          *ngIf="component.flexType"
+          [cxOutlet]="component.flexType"
+          [cxOutletContext]="{ component: component }"
+        >
+          <ng-container [cxComponentWrapper]="component"></ng-container>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</div>

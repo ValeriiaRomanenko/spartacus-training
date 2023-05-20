@@ -1,0 +1,23 @@
+.st-btn-primary {
+  background: var(--cx-color-primary);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cx-color-primary);
+    border-color: var(--cx-color-primary);
+    filter: brightness(calc(117 / 100));
+  }
+}
+
+.st-btn-secondary {
+  background-color: var(--cx-color-background);
+  border-color: #565656;
+
+  &:hover,
+  &:focus {
+    background-color: var(--cx-color-secondary);
+    border-color: #565656;
+    filter: brightness(calc(121 / 100));
+  }
+}
+
