@@ -5,6 +5,7 @@ import { OrderEntry, PromotionLocation } from '@spartacus/core';
 import { CartOutlets } from '@spartacus/storefront';
 import {PromotionResult} from "@spartacus/core/src/model/cart.model";
 import {StIconTypes} from "../../../../shared/st-icon.types";
+import {Subscription} from "rxjs";
 
 export interface CartItemComponentOptions {
   isSaveForLater?: boolean;
