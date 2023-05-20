@@ -1,8 +1,8 @@
 import { StRegisterCustomerComponent, StLoginFormComponent } from '../../pages/register';
 import { StCartComponent } from '../../pages/cart/containers';
-import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 import { StSearchBoxComponent, StLoginComponent } from "../../shared";
 import { StMiniCartComponent } from "../../shared/st-mini-cart/st-mini-cart.component";
+import { StOrderSummaryComponent } from '../../pages/order-summary/containers';
 
 export const stCmsComponentsConfig = {
   RegisterCustomerComponent: {
