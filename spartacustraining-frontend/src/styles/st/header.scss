@@ -10,11 +10,12 @@
   &__benefits {
     font-size: small;
     padding: 2px 0;
+    background-color: var(--cx-color-primary);
+    color: var(--cx-color-background);
+    border-bottom: 1px solid var(--cx-color-background);
   }
 
   &__top {
-    padding: 5px;
-
     .st-header-logo {
       flex: 1 1 30%;
 
@@ -53,16 +54,6 @@
         padding: 0;
       }
     }
-
-    //.HeaderLinks {
-    //  cx-navigation-ui.flyout {
-    //    > nav {
-    //      > span {
-    //        background: red;
-    //      }
-    //    }
-    //  }
-    //}
   }
 
   &__bottom {

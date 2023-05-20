@@ -14,27 +14,32 @@ import {
 
 import { StCartComponent, StEmptyCartComponent } from './containers';
 import { StCartItemsComponent, StCartItemComponent, StCartActionsComponent } from './components';
+import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
-  declarations: [
-    StCartComponent,
-    StEmptyCartComponent,
-    StCartItemsComponent,
-    StCartItemComponent,
-    StCartActionsComponent
-  ],
-  imports: [
-    CommonModule,
-    I18nModule,
-    UrlModule,
-    SpinnerModule,
-    FormErrorsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    PromotionsModule,
-    OutletModule,
-    ItemCounterModule,
-    MediaModule
-  ]
+    declarations: [
+        StCartComponent,
+        StEmptyCartComponent,
+        StCartItemsComponent,
+        StCartItemComponent,
+        StCartActionsComponent
+    ],
+    exports: [
+        StEmptyCartComponent
+    ],
+    imports: [
+        CommonModule,
+        I18nModule,
+        UrlModule,
+        SpinnerModule,
+        FormErrorsModule,
+        ReactiveFormsModule,
+        RouterModule,
+        PromotionsModule,
+        OutletModule,
+        ItemCounterModule,
+        MediaModule,
+        SharedModule
+    ]
 })
 export class StCartModule { }

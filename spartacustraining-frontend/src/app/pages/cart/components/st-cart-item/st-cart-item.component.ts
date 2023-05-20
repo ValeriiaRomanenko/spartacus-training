@@ -4,6 +4,7 @@ import { CartItemContext, CartItemContextSource } from '@spartacus/storefront';
 import { OrderEntry, PromotionLocation } from '@spartacus/core';
 import { CartOutlets } from '@spartacus/storefront';
 import {PromotionResult} from "@spartacus/core/src/model/cart.model";
+import {StIconTypes} from "../../../../shared/st-icon.types";
 
 export interface CartItemComponentOptions {
   isSaveForLater?: boolean;
@@ -32,6 +33,8 @@ export class StCartItemComponent implements OnChanges {
   };
 
   readonly CartOutlets = CartOutlets;
+
+  iconTypes = StIconTypes;
 
   constructor(private _cartItemContextSource: CartItemContextSource) { }
 

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {Image} from "@spartacus/core";
 
 @Component({
-  selector: 'app-st-empty-cart',
+  selector: 'st-empty-cart',
   templateUrl: './st-empty-cart.component.html',
   styleUrls: ['./st-empty-cart.component.scss']
 })
-export class StEmptyCartComponent implements OnInit {
+export class StEmptyCartComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  emptyImage: Image = {
+    url: 'https://thelace.com.ua/wp-content/themes/konte/images/empty-bag.svg'
   }
 
 }
