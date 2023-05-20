@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { I18nModule, UrlModule } from '@spartacus/core';
-import { StRegisterCustomerComponent } from './st-register-customer/st-register-customer.component';
-import { SharedModule } from "../../shared/shared.module";
-import { StRegisterModalComponent } from './st-register-modal/st-register-modal.component';
 import { LoginModule, LoginRegisterModule } from "@spartacus/user/account/components";
-import { LoginGuard } from "./login.guard";
 import {
   FormErrorsModule,
   IconModule,
@@ -20,6 +16,10 @@ import {
   PageSlotModule,
   SpinnerModule
 } from '@spartacus/storefront';
+import { StRegisterCustomerComponent } from "./st-register-customer/st-register-customer.component";
+import { StRegisterModalComponent } from "./st-register-modal/st-register-modal.component";
+import { LoginGuard } from "./login.guard";
+import { SharedModule } from "../../shared/shared.module";
 import { StLoginFormComponent } from "./st-login-form/st-login-form.component";
 
 @NgModule({
@@ -60,6 +60,6 @@ import { StLoginFormComponent } from "./st-login-form/st-login-form.component";
     PageComponentModule,
     OutletModule,
   ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
 export class RegisterModule { }
