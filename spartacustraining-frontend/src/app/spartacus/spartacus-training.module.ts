@@ -14,10 +14,6 @@ import {
   imports: [
     CommonModule,
     SharedModule,
-    RegisterModule,
-    LayoutModule,
-    RegisterModule,
-    SharedModule,
     LayoutModule,
     StCartModule,
     StOrderSummaryModule,
