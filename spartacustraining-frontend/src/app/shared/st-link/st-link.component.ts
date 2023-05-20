@@ -13,4 +13,5 @@ export class StLinkComponent {
   @Input() ariaLabel?: string;
   @Input() linkUrl?: string;
   @Input() routerUrl?: any;
+  @Input() customClass?: string;
 }

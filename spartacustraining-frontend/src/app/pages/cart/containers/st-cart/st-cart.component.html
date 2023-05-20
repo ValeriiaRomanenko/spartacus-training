@@ -1,4 +1,4 @@
-<st-cart-actions [cart$]="cart$"></st-cart-actions>
+<st-cart-actions [cart$]="cart$" class="d-flex flex-nowrap justify-content-end border-bottom border-secondary"></st-cart-actions>
 
 <ng-container *ngIf="cart$ | async as cart">
   <ng-container *ngIf="entries$ | async as entries">
@@ -20,7 +20,7 @@
   </ng-container>
 </ng-container>
 
-<st-cart-actions [cart$]="cart$"></st-cart-actions>
+<st-cart-actions [cart$]="cart$" class="d-flex flex-nowrap justify-content-start"></st-cart-actions>
 
 <ng-template let-ctx #saveForLaterBtn>
   <div *ngIf="selectiveCartEnabled" class="col-md-3 col-lg-3 col-xl-3 cx-sfl-btn">

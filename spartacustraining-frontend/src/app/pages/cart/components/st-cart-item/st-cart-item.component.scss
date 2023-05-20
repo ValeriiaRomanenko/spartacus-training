@@ -1,0 +1,36 @@
+:host {
+  display: contents;
+
+  .st-image-container {
+    max-width: 150px;
+  }
+
+  td {
+    border: none;
+  }
+
+  .st-actions-row {
+    border-bottom: 1px solid var(--cx-color-secondary);
+  }
+
+  .cx-value,
+  .cx-label {
+    font-size: 14px;
+  }
+
+  .cx-label {
+    font-weight: bold;
+  }
+
+  .st-total {
+    .cx-value {
+      font-size: 16px;
+    }
+  }
+
+  .st-qty-input {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0;
+  }
+}

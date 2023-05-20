@@ -17,28 +17,30 @@ import {
 } from "@spartacus/storefront";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from "./shared/shared.module";
+import {StCartModule} from "./pages";
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    OutletRefModule,
-    AppRoutingModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
-    SpartacusModule,
-    PageComponentModule,
-    PageSlotModule,
-    NgbModule,
-    PageLayoutModule,
-    GlobalMessageComponentModule,
-    MediaModule,
-    GenericLinkModule,
-    SharedModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        OutletRefModule,
+        AppRoutingModule,
+        StoreModule.forRoot({}),
+        EffectsModule.forRoot([]),
+        SpartacusModule,
+        PageComponentModule,
+        PageSlotModule,
+        NgbModule,
+        PageLayoutModule,
+        GlobalMessageComponentModule,
+        MediaModule,
+        GenericLinkModule,
+        SharedModule,
+        StCartModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

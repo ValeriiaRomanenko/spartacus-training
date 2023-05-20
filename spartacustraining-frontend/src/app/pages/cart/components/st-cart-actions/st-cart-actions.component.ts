@@ -12,6 +12,7 @@ import {ContextService, LAUNCH_CALLER, LaunchDialogService, ORDER_ENTRIES_CONTEX
 import {Observable, of, Subscription} from 'rxjs';
 import {switchMap, take} from 'rxjs/operators';
 import {ExportOrderEntriesToCsvService} from "@spartacus/cart/import-export/components";
+import {StIconTypes} from "../../../../shared/st-icon.types";
 
 @Component({
   selector: 'st-cart-actions',
@@ -28,6 +29,8 @@ export class StCartActionsComponent implements OnDestroy {
 
   @Input()
   cart$: Observable<Cart>;
+
+  iconTypes = StIconTypes;
 
   entries$: Observable<OrderEntry[] | undefined> =
     this._orderEntriesContext$.pipe(

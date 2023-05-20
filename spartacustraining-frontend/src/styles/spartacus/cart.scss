@@ -1,1 +1,11 @@
 @import "@spartacus/cart";
+
+.CartPageTemplate {
+  > .TopContent {
+    > cx-add-to-saved-cart,
+    > cx-save-for-later,
+    > cx-export-order-entries {
+      display: none;
+    }
+  }
+}
