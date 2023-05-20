@@ -18,10 +18,10 @@ export const stCmsComponentsConfig = {
     component: StSearchBoxComponent
   },
   LoginComponent: {
-    component: StLoginComponent
+    component: StLoginComponent,
   },
   MiniCartComponent: {
-    component: StMiniCartComponent
+    component: StMiniCartComponent,
   },
   ReturningCustomerLoginComponent: {
     component: StLoginFormComponent
