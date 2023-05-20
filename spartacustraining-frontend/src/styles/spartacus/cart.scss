@@ -1,10 +1,26 @@
 @import "@spartacus/cart";
 
-.CartPageTemplate {
+cx-page-layout.CartPageTemplate {
+  --cx-page-width-max: 1000px;
+
   > .TopContent {
+    --cx-flex-basis: 100%;
+
     > cx-add-to-saved-cart,
     > cx-save-for-later,
     > cx-export-order-entries {
+      display: none;
+    }
+
+    .input-coupon-code {
+      border: none;
+      border-bottom: 1px solid black;
+      border-radius: 0;
+    }
+  }
+
+  > .CenterRightContentSlot {
+    cx-cart-coupon {
       display: none;
     }
   }

@@ -2,7 +2,7 @@
   <tr>
     <td class="st-image-container">
       <a [routerLink]="{ cxRoute: 'product', params: item.product } | cxUrl" cxModal="dismiss" tabindex="-1">
-        <cx-media [container]="item.product.images?.PRIMARY" format="thumbnail"></cx-media>
+        <cx-media [container]="item.product.images?.PRIMARY" format="product"></cx-media>
       </a>
     </td>
     <td class="st-info d-flex flex-column justify-content-start mt-2">

@@ -1,0 +1,64 @@
+:host {
+  border: 1px solid var(--cx-color-primary);
+  margin-top: 20px;
+
+  .st-order-info {
+    > div {
+      margin-bottom: 15px;
+    }
+  }
+
+  .st-overall-info {
+    font-size: 12px;
+
+    .st-info {
+      align-items: center;
+      display: flex;
+      margin-bottom: 10px;
+
+      span {
+        margin-right: 10px;
+      }
+    }
+
+    .st-payments {
+      font-size: 14px;
+      margin-top: 20px;
+
+      &__list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0.75rem 0;
+        padding-left: 0;
+
+        li {
+          margin-right: 5px;
+
+          img {
+            display: block;
+            width: 3.125rem;
+          }
+        }
+      }
+    }
+  }
+
+  .st-total {
+    border-top: 1px solid var(--cx-color-primary);
+
+    &-price {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .st-terms-agreement {
+      font-size: 11px;
+    }
+  }
+}
+

@@ -10,13 +10,7 @@ import { LayoutModule } from "../layout/layout.module";
     CommonModule,
     RegisterModule,
     SharedModule,
-    RegisterModule,
     LayoutModule,
-    RegisterModule,
-    SharedModule,
-    RegisterModule,
-    LayoutModule,
-    RegisterModule,
     StCartModule,
     StOrderSummaryModule
   ]
