@@ -81,8 +81,7 @@
       <!-- Actions -->
       <div *ngIf="(!readonly || options?.isSaveForLater) && item?.updateable" class="cx-actions">
         <ng-container *ngIf="!isProductOutOfStock(item?.product)">
-          <ng-container
-            *ngTemplateOutlet="options.optionalBtn; context: { $implicit: { loading: quantityControl?.disabled, item: item } }"
+          <ng-container *ngTemplateOutlet="options.optionalBtn; context: { $implicit: { loading: quantityControl?.disabled, item: item } }"
           ></ng-container>
         </ng-container>
       </div>
@@ -90,8 +89,7 @@
       <div class="d-flex justify-content-end">
         <st-link [iconType]="iconTypes.favorite" customClass="flex-row ml-3" text="Add to favourite"></st-link>
         <st-link [iconType]="iconTypes.bookmark" customClass="flex-row ml-3" text="Save for later"></st-link>
-        <st-link [iconType]="iconTypes.delete" customClass="flex-row ml-3" text="Remove"
-                 (click)="removeItem()"></st-link>
+        <st-link [iconType]="iconTypes.delete" customClass="flex-row ml-3" text="Remove" (click)="removeItem()"></st-link>
       </div>
     </td>
   </tr>
