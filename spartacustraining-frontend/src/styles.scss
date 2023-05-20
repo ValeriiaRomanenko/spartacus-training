@@ -2,15 +2,65 @@
 
 $styleVersion: 4.3;
 @import '~@spartacus/styles/index';
-@import "styles/st/index";
+
+//@import "src/styles/spartacus/user.scss";
+@import "src/styles/spartacus/storefinder.scss";
+@import "src/styles/spartacus/product.scss";
+@import "src/styles/spartacus/order.scss";
+@import "src/styles/spartacus/checkout.scss";
+@import "src/styles/spartacus/cart.scss";
+@import "src/styles/spartacus/asm.scss";
+@import "src/styles/st/index.scss";
 
 body {
-  --cx-color-primary: #8B8B81;
-  --cx-color-secondary: #8B8B81;
-  --cx-color-text: #5c6f68;
-  --cx-color-background: #F5F5F5;
-  --cx-color-dark: #555555;
+  --cx-color-primary: #679289;
+  --cx-color-primary-hover: #83afa6;
+  --cx-color-secondary: #bcbcc1;
+  --cx-color-text: #000;
+  --cx-color-inverse: #000;
+  --cx-color-background: #fff;
+  --cx-color-dark: #fff;
   --cx-page-width-max: 1440px;
-  background-color: $cultured !important;
-  font-family: $font-family-brand;
+
+  background-color: var(--cx-color-background);
+  color: var(--cx-color-text);
+  font-family: $font-family-poppins;
+  font-size: $font-size-regular;
+
+  $skipComponentStyles: (cx-login-form);
+
+  @extend  %cx-searchbox__body;
+
+  &.searchbox-is-active {
+    &.has-searchbox-results {
+      .results {
+        display: block;
+      }
+    }
+  }
+
+  &:not(.searchbox-is-active) {
+    @include media-breakpoint-down(sm) {
+      st-search-box {
+        input {
+          display: none;
+          width: 0;
+          padding: 0;
+        }
+        button.reset {
+          display: none;
+        }
+      }
+    }
+  }
+
+  cx-page-layout.LandingPage2Template {
+    cx-page-slot.Section1 {
+      margin-top: 0 !important;
+    }
+  }
+
+  cx-login-register {
+    display: none;
+  }
 }

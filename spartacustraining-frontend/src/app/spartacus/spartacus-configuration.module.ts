@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from '@spartacus/assets';
+import {
+  defaultCmsContentProviders,
+  DIALOG_TYPE,
+  LayoutConfig,
+  layoutConfig,
+  mediaConfig
+} from '@spartacus/storefront';
 import { AuthConfig, CmsConfig, FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from '@spartacus/core';
-import { defaultCmsContentProviders, LayoutConfig, layoutConfig, mediaConfig } from '@spartacus/storefront';
 
 import { environment } from '../../environments/environment';
+import { StRegisterModalComponent } from "../pages/register";
 import { stCmsComponentsConfig } from './config/st-cms-components.config';
 import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
 
@@ -27,7 +34,8 @@ import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
       context: {
         baseSite: [environment.contextBaseSite],
         currency: [environment.contextCurrency],
-        language: [environment.contextLanguage]
+        language: [environment.contextLanguage],
+        theme: ['santorini']
       }
     }),
     provideConfig(<AuthConfig>{
@@ -39,6 +47,15 @@ import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
           scope: 'basic'
         }
       },
+    }),
+    provideConfig(<LayoutConfig>{
+      launch: {
+        LOGIN_MODAL: {
+          inlineRoot: true,
+          component: StRegisterModalComponent,
+          dialogType: DIALOG_TYPE.POPOVER_CENTER_BACKDROP,
+        },
+      }
     }),
     provideConfig(<I18nConfig>{
       i18n: {

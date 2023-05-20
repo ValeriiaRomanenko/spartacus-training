@@ -1,0 +1,14 @@
+:host {
+  .form-group {
+    padding: 0;
+
+    .form-check {
+      padding-inline-start: 0;
+      font-size: 14px;
+    }
+  }
+
+  form {
+    --cx-link-font-size: 14px;
+  }
+}
