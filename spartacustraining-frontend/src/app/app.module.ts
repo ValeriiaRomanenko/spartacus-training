@@ -17,7 +17,7 @@ import {
 } from "@spartacus/storefront";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from "./shared/shared.module";
-import {StCartModule} from "./pages";
+import { StCartModule } from "./pages";
 
 @NgModule({
   declarations: [
