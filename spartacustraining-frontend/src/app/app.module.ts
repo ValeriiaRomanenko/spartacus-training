@@ -18,6 +18,7 @@ import {
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from "./shared/shared.module";
 import {StCartModule} from "./pages";
+import { UrlModule } from "@spartacus/core";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {StCartModule} from "./pages";
         MediaModule,
         GenericLinkModule,
         SharedModule,
-        StCartModule
+        StCartModule,
+        UrlModule
     ],
   providers: [],
   bootstrap: [AppComponent]

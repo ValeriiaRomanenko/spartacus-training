@@ -20,7 +20,11 @@
   </ng-container>
 </ng-container>
 
-<st-cart-actions [cart$]="cart$" class="d-flex flex-nowrap justify-content-start"></st-cart-actions>
+<div class="row justify-content-between">
+  <st-cart-actions [cart$]="cart$" class="d-flex flex-nowrap justify-content-start col-5"></st-cart-actions>
+  <cx-cart-coupon class="col-5 p-0 mr-3"></cx-cart-coupon>
+</div>
+
 
 <ng-template let-ctx #saveForLaterBtn>
   <div *ngIf="selectiveCartEnabled" class="col-md-3 col-lg-3 col-xl-3 cx-sfl-btn">

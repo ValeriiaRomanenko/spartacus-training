@@ -5,7 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-st-order-summary',
+  selector: 'st-order-summary',
   templateUrl: './st-order-summary.component.html',
   styleUrls: ['./st-order-summary.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
