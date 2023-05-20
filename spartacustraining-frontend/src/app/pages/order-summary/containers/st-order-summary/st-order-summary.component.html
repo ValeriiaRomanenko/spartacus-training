@@ -1,47 +1,22 @@
-<div class="st-cart ml-lg-4 mb-md-4">
+<div class="st-cart my-4 d-flex flex-wrap justify-content-end">
   <ng-container *ngIf="cart$ | async as cart">
     <ng-container *ngIf="entries$ | async as entries">
-      <h3>{{ 'orderCost.orderSummary' | cxTranslate }}</h3>
-      <div *ngIf="cart">
+      <h3 class="col-12 mb-4">{{ 'orderCost.orderSummary' | cxTranslate }}</h3>
+      <div *ngIf="cart" class="st-order-info col-8 mb-3">
         <div class="row">
-          <div class="col-6">
+          <div class="col-4">
             {{ 'orderCost.subtotal' | cxTranslate }}
           </div>
-          <div class="col-6">
+          <div class="col-4">
             {{ cart.subTotal?.formattedValue }}
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
-            {{
-            (cart.deliveryCost?.formattedValue
-                ? 'orderCost.shipping'
-                : 'orderCost.estimatedShipping'
-            ) | cxTranslate
-            }}
+          <div class="col-4">
+            {{ (cart.deliveryCost?.formattedValue ? 'orderCost.shipping' : 'orderCost.estimatedShipping') | cxTranslate }}
           </div>
-          <div class="col-6">
-            {{
-            cart.deliveryCost?.formattedValue
-              ? cart.deliveryCost.formattedValue
-              : ('orderCost.toBeDetermined' | cxTranslate)
-            }}
-          </div>
-        </div>
-        <div class="row" *ngIf="cart.net; else cartWithoutNet">
-          <div class="col-6">
-            {{ 'orderCost.salesTax' | cxTranslate }}
-          </div>
-          <div class="col-6">
-            {{ cart.totalTax?.formattedValue }}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            {{ 'orderCost.total' | cxTranslate }}
-          </div>
-          <div class="col-6">
-            {{ cart.totalPriceWithTax?.formattedValue }}
+          <div class="col-3">
+            {{ cart.deliveryCost?.formattedValue ? cart.deliveryCost.formattedValue : ('orderCost.toBeDetermined' | cxTranslate) }}
           </div>
         </div>
         <div class="row" *ngIf="cart.totalDiscounts?.value > 0">
@@ -50,6 +25,25 @@
             {{ cart.totalDiscounts?.formattedValue }}
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-4">
+            Total items count:
+          </div>
+          <div class="col-3">
+            {{ cart.deliveryItemsQuantity }}
+          </div>
+        </div>
+
+        <div class="row" *ngIf="cart.net; else cartWithoutNet">
+          <div class="col-4">
+            {{ 'orderCost.salesTax' | cxTranslate }}
+          </div>
+          <div class="col-3">
+            {{ cart.totalTax?.formattedValue }}
+          </div>
+        </div>
+
         <ng-template #cartWithoutNet>
           <div class="row">
             <div class="col">
@@ -63,19 +57,65 @@
           </div>
         </ng-template>
       </div>
+      <div class="st-overall-info col-4">
+        <div class="st-info font-italic">
+          <span class="material-icons-outlined">local_shipping</span>
+          Free delivery for orders over £ 30
+        </div>
 
-      <ng-container *cxFeatureLevel="'!4.2'">
+        <div class="st-info font-italic">
+          <span class="material-icons-outlined">replay</span>
+          Free returns in 30 days
+        </div>
+
+        <div class="st-info font-italic"><span class="material-icons-outlined">verified_user</span>
+          Secure payment
+        </div>
+
+        <div class="st-payments">We accept:
+          <ul class="st-payments__list">
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/blteb6ac00757d78e0f/64523d6e0cb44c111825f14d/visa.jpg?width=100"
+                     loading="lazy" alt="Visa"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/blt16b169eefcc5c400/64523d6e3f91f5111ab5af21/visa_electron.jpg?width=100"
+                     loading="lazy" alt="Visa Electron"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/blt59d0533017d5ad77/64523d6e6c2651110e65bf81/mastercard.jpg?width=100"
+                     loading="lazy" alt="Mastercard"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/bltba561165c388c7e6/64523d6e52735210b695eb28/paypal.jpg?width=100"
+                     loading="lazy" alt="PayPal"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/blt2189870f32c1eed0/64523d6efecb9210c4303fb9/klarna.jpg?width=100"
+                     loading="lazy" alt="Klarna"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/bltec77ae824c728c7e/6453500048c8580e15bdeafb/apple_pay.jpg?width=100"
+                     loading="lazy" alt="ApplePay"></li>
+            <li><img class="OyAIE"
+                     src="https://eu-images.contentstack.com/v3/assets/blt8df446cc4a9bea2e/blt55ab9a3eac78522c/64523d6e0cb44c111825f151/american_express.jpg?width=100"
+                     loading="lazy" alt="American Express"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="st-total col-12 d-flex flex-row flex-nowrap justify-content-between pt-4">
+        <div class="col-8 st-total-price d-flex flex-row flex-wrap">
+          <div class="col-6 mb-3">
+            {{ 'orderCost.total' | cxTranslate }} {{ cart.totalPriceWithTax?.formattedValue }}
+          </div>
+          <p class="col-12 st-terms-agreement font-italic mb-0">By clicking ‘Proceed to checkout’ you are agreeing to our
+            current Terms and Conditions and Privacy Policy</p>
+        </div>
+
         <button
           [routerLink]="{ cxRoute: 'checkout' } | cxUrl"
           *ngIf="entries.length"
-          class="btn btn-primary btn-block"
+          class="btn btn-primary col-3 mr-4"
           type="button"
         >
           {{ 'cartDetails.proceedToCheckout' | cxTranslate }}
         </button>
-      </ng-container>
-
+      </div>
     </ng-container>
   </ng-container>
-
 </div>

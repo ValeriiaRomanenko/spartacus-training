@@ -14,7 +14,7 @@
       </div>
       <div class="st-header__top-right d-flex justify-content-end flex-row flex-nowrap align-items-center">
         <st-link [iconType]="iconTypes.language" text="Language"></st-link>
-        <st-link [iconType]="iconTypes.favorite" text="Wishlist"></st-link>
+        <st-link [iconType]="iconTypes.favorite" text="Wishlist" [routerLink]="'/my-account/wishlist'"></st-link>
         <cx-page-slot position="SiteLogin"></cx-page-slot>
         <cx-page-slot position="MiniCart"></cx-page-slot>
       </div>

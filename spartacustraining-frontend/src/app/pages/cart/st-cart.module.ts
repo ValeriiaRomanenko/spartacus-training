@@ -4,12 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { I18nModule, UrlModule } from '@spartacus/core';
 import {
-  FormErrorsModule,
-  ItemCounterModule,
-  MediaModule,
-  OutletModule,
-  PromotionsModule,
-  SpinnerModule
+    AddToWishListModule,
+    CartCouponModule,
+    FormErrorsModule,
+    ItemCounterModule,
+    MediaModule,
+    OutletModule,
+    PromotionsModule,
+    SpinnerModule
 } from '@spartacus/storefront';
 
 import { StCartComponent, StEmptyCartComponent } from './containers';
@@ -39,7 +41,9 @@ import {SharedModule} from "../../shared/shared.module";
         OutletModule,
         ItemCounterModule,
         MediaModule,
-        SharedModule
+        SharedModule,
+        CartCouponModule,
+        AddToWishListModule
     ]
 })
 export class StCartModule { }

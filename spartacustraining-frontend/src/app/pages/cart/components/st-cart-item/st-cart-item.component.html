@@ -36,7 +36,13 @@
     </td>
     <td class="st-quantity">
         <div class="cx-value mx-3" [class.readonly-value]="readonly">
-          <input class="st-qty-input form-control text-center" type="number" id="qty" name="quantity" min="0" [value]="quantityControl.value" [control]="quantityControl" [max]="getMax(item)">
+          <input class="st-qty-input form-control text-center"
+                 type="number"
+                 name="quantity"
+                 min="0"
+                 [max]="getMax(item)"
+                 [value]="quantityControl.value"
+                 [formControl]="quantityControl"/>
         </div>
     </td>
     <td class="st-total">
