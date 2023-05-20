@@ -60,6 +60,6 @@ import { StLoginFormComponent } from "./st-login-form/st-login-form.component";
     PageComponentModule,
     OutletModule,
   ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
 export class RegisterModule { }
