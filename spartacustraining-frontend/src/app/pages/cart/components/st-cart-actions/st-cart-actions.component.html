@@ -1,24 +1,26 @@
-<div class="st-cart mt-5 mb-5">
+<div class="st-cart my-2">
   <ng-container *ngIf="cart$ | async as cart">
     <div class="d-flex justify-content-center align-items-center">
       <div class="p-2">
-        <button class="link cx-action-link" [routerLink]="{ cxRoute: 'savedCarts' } | cxUrl" cxAutoFocus>
-          <span>{{ 'addToSavedCart.savedCarts' | cxTranslate }}</span>
-        </button>
+        <st-link
+          [iconType]="iconTypes.saved_cart"
+          [text]="'addToSavedCart.savedCarts' | cxTranslate"
+          [routerUrl]="{ cxRoute: 'savedCarts' } | cxUrl"
+        ></st-link>
       </div>
       <div class="p-2">
-        <button #element class="link cx-action-link" (click)="saveCart(cart)" cxAutoFocus>
-          <span>{{ 'addToSavedCart.saveCartForLater' | cxTranslate }}</span>
-        </button>
+        <st-link #element cxAutoFocus
+          [iconType]="iconTypes.bookmarks"
+          [text]="'addToSavedCart.saveCartForLater' | cxTranslate"
+          (click)="saveCart(cart)"
+        ></st-link>
       </div>
       <div class="p-2">
-        <button
-          *ngIf="(entries$ | async)?.length > 0 && (entries$ | async) as entries"
-          class="link cx-action-link"
-          (click)="exportCsv(entries)"
-        >
-          {{ 'exportEntries.exportToCsv' | cxTranslate }}
-        </button>
+        <st-link *ngIf="(entries$ | async)?.length > 0 && (entries$ | async) as entries"
+                 [iconType]="iconTypes.export"
+                 [text]="'exportEntries.exportToCsv' | cxTranslate"
+                 (click)="exportCsv(entries)"
+        ></st-link>
       </div>
     </div>
   </ng-container>

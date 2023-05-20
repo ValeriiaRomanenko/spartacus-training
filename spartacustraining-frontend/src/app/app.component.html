@@ -1,6 +1,6 @@
 <ng-template cxOutletRef="cx-header">
   <header class="st-header">
-    <div class="st-header__benefits d-flex justify-content-center border-bottom border-secondary">
+    <div class="st-header__benefits d-flex justify-content-center">
       <span>Free shipping on orders over $40</span>
     </div>
     <div class="st-header__top d-flex flex-row flex-nowrap">
@@ -24,6 +24,10 @@
       <cx-page-slot position="SearchBox"></cx-page-slot>
     </div>
   </header>
+</ng-template>
+
+<ng-template cxOutletRef="EmptyCartMiddleContent">
+  <st-empty-cart></st-empty-cart>
 </ng-template>
 
 <cx-storefront></cx-storefront>

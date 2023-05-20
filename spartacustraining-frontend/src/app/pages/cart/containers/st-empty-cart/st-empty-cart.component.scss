@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+
+  cx-media {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+}

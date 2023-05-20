@@ -1,4 +1,4 @@
-<a [attr.href]="linkUrl" [routerLink]="routerUrl ? routerUrl : null" [attr.aria-label]="ariaLabel" class="st-link">
+<a [attr.href]="linkUrl" [routerLink]="routerUrl ? routerUrl : null" [attr.aria-label]="ariaLabel" class="st-link {{ customClass }}">
   <span *ngIf="iconType" class="st-link__icon material-icons-outlined">{{ iconType }}</span>
   <span *ngIf="text; else externalContent" class="st-link__text">{{ text }}</span>
 </a>
