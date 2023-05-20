@@ -1,1 +1,29 @@
+<ng-template cxOutletRef="cx-header">
+  <header class="st-header">
+    <div class="st-header__benefits d-flex justify-content-center border-bottom border-secondary">
+      <span>Free shipping on orders over $40</span>
+    </div>
+    <div class="st-header__top d-flex flex-row flex-nowrap">
+      <div class="st-header__top-left d-flex justify-content-start flex-row flex-nowrap align-items-center">
+        <cx-page-slot position="SiteLinks"></cx-page-slot>
+      </div>
+      <div class="st-header-logo d-flex justify-content-center align-items-center">
+        <cx-generic-link url="/">
+          <h1><cx-media [container]="getLogo()"></cx-media></h1>
+        </cx-generic-link>
+      </div>
+      <div class="st-header__top-right d-flex justify-content-end flex-row flex-nowrap align-items-center">
+        <st-link [iconType]="iconTypes.language" text="Language"></st-link>
+        <st-link [iconType]="iconTypes.favorite" text="Wishlist"></st-link>
+        <cx-page-slot position="SiteLogin"></cx-page-slot>
+        <cx-page-slot position="MiniCart"></cx-page-slot>
+      </div>
+    </div>
+    <div class="st-header__bottom d-flex justify-content-between flex-row flex-nowrap align-items-center">
+      <cx-page-slot position="NavigationBar"></cx-page-slot>
+      <cx-page-slot position="SearchBox"></cx-page-slot>
+    </div>
+  </header>
+</ng-template>
+
 <cx-storefront></cx-storefront>

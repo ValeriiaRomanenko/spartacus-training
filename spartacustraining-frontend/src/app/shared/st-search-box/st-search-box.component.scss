@@ -1,0 +1,21 @@
+@import "~@spartacus/styles/scss/cxbase/mixins";
+@import "~@spartacus/styles/scss/components/product/search/searchbox";
+
+:host {
+  @extend %cx-searchbox__body !optional;
+  @extend %cx-searchbox !optional;
+
+  .st-searchbox__wrapper {
+    background: transparent;
+    padding: 0 15px;
+  }
+
+  .searchbox  {
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+    padding: 0;
+    border-bottom: 1px solid var(--cx-color-inverse);
+  }
+}
+

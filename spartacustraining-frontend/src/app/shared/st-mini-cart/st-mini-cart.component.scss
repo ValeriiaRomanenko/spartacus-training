@@ -1,0 +1,17 @@
+@import "../../../styles/st/fonts";
+
+:host {
+  .total {
+    display: none;
+  }
+
+  .count {
+    width: 35%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 50%);
+    font-size: $font-size-x-small;
+    text-align: left;
+  }
+}

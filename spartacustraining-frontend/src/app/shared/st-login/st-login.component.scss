@@ -1,0 +1,24 @@
+st-login  {
+  position: relative;
+
+  .HeaderLinks {
+    cx-navigation-ui.flyout {
+      > nav {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+
+        > span {
+          display: none;
+        }
+
+        > .wrapper {
+          top: 100%;
+          right: -100%;
+        }
+      }
+    }
+  }
+}

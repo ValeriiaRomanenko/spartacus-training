@@ -1,0 +1,22 @@
+:host {
+  --cx-link-font-size: 14px;
+
+  form {
+    label, st-link {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .st-keep-sign-in {
+      font-size: 15px;
+    }
+  }
+
+  .st-register-link {
+    --cx-link-font-size: 16px;
+
+    justify-content: center;
+  }
+}
+
+

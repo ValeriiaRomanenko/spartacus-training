@@ -1,0 +1,24 @@
+@import "../../../../styles/st/fonts";
+
+:host {
+  .modal-dialog {
+    width: 500px;
+  }
+
+  .modal-content {
+    border-radius: 6px;
+
+    .modal-header h2 {
+      font-size: $font-size-x-large;
+    }
+
+    .modal-body {
+      .user-form {
+        input.form-control {
+          border: none;
+          border-bottom: 1px solid red;
+        }
+      }
+    }
+  }
+}

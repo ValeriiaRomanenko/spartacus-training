@@ -1,0 +1,22 @@
+@import "../../../styles/st/fonts";
+
+.st-link {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--cx-color-text);
+
+  &:hover,
+  &:focus {
+    color: var(--cx-color-primary);
+    text-decoration: none;
+  }
+
+  &__text {
+    font-size: var(--cx-link-font-size, $font-size-x-small);
+    text-align: center;
+    white-space: nowrap;
+  }
+}
