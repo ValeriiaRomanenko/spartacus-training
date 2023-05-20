@@ -1,0 +1,46 @@
+form {
+  .st-form-control {
+     &__input {
+       border: none;
+       border-bottom: 1px solid var(--cx-color-inverse);
+       border-radius: 0;
+     }
+  }
+
+  label {
+    position: relative;
+
+    .st-error-icon {
+      display: none;
+      color: darkred;
+    }
+
+    input.ng-invalid.ng-touched{
+      & ~ .st-error-icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: inline-block;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  cx-form-errors {
+    p {
+      color: darkred;
+      padding-inline-start: 0;
+
+      &::after,
+      &::before {
+        display: none;
+        content: '';
+      }
+    }
+  }
+
+  .st-checkbox {
+    position: relative;
+    margin: 0 10px 0 0;
+  }
+}

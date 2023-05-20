@@ -1,0 +1,74 @@
+<cx-spinner class="overlay" *ngIf="isUpdating$ | async"></cx-spinner>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <label>
+    <input
+      required="true"
+      type="email"
+      class="st-form-control__input form-control"
+      formControlName="userId"
+      placeholder="{{ 'loginForm.emailAddress.placeholder' | cxTranslate }}"
+    />
+    <span class="st-error-icon material-icons-outlined">error_outline</span>
+  </label>
+  <cx-form-errors [control]="form.get('userId')"></cx-form-errors>
+
+  <label>
+    <input
+      required="true"
+      type="password"
+      class="st-form-control__input form-control"
+      placeholder="{{ 'loginForm.password.placeholder' | cxTranslate }}"
+      formControlName="password"
+      [attr.aria-label]="'loginForm.password.placeholder' | cxTranslate"
+      cxPasswordVisibilitySwitch
+    />
+    <span class="st-error-icon material-icons-outlined">error_outline</span>
+  </label>
+  <cx-form-errors [control]="form.get('password')"></cx-form-errors>
+
+  <label class="st-keep-sign-in d-flex flex-row flex-nowrap">
+    <input
+      class="st-checkbox flex-shrink-0"
+      type="checkbox"
+      name="keepSignIn"
+    />
+    <span class="form-check-label">Keep me signed in.</span>
+  </label>
+
+  <st-link [routerUrl]="{ cxRoute: 'forgotPassword' } | cxUrl" [text]="'Forgot your password?'"></st-link>
+
+  <button
+    type="submit"
+    class="btn btn-block st-btn-primary"
+    [disabled]="form.disabled"
+  >
+    {{ 'loginForm.signIn' | cxTranslate }}
+  </button>
+</form>
+
+<div class="row">
+  <p class="d-block w-100 mt-3 text-center"> OR </p>
+  <div class="col-md-12 w-100 mb-3">
+    <button class="btn st-btn-secondary d-block w-100" style="text-transform:none">
+      <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+      Login with Google
+    </button>
+  </div>
+  <div class="col-md-12 w-100 mb-3">
+    <button class="btn st-btn-secondary d-block w-100" style="text-transform:none">
+      <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Apple sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Apple_Logo.svg/1719px-Apple_Logo.svg.png"/>
+      Login with Apple
+    </button>
+  </div>
+  <div class="col-md-12 w-100 mb-3">
+    <button class="btn st-btn-secondary d-block w-100" style="text-transform:none">
+      <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Facebook sign-in" src="https://w7.pngwing.com/pngs/628/508/png-transparent-facebook-logo-computer-icons-facebook-blue-trademark-logo.png"/>
+      Login with Facebook
+    </button>
+  </div>
+</div>
+
+<div class="row st-register-link">
+  <st-link [routerUrl]="{ cxRoute: 'register' } | cxUrl" [text]="'New to GILROY? Register.'"></st-link>
+</div>

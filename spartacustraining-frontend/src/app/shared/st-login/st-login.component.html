@@ -1,0 +1,22 @@
+<ng-container *ngIf="user$ | async as user; else login">
+  <div class="cx-login-greet" [attr.aria-label]="'miniLogin.userGreeting' | cxTranslate: { name: user.name }">
+    <st-link
+      [iconType]="iconTypes.account"
+      [text]="'Hi, ' + user.firstName"
+    >
+    </st-link>
+  </div>
+<!--  <div class="st-login_nav">-->
+    <cx-page-slot id="account-nav" position="HeaderLinks"></cx-page-slot>
+<!--  </div>-->
+</ng-container>
+
+<ng-template #login>
+  <st-link
+    [iconType]="iconTypes.login"
+    [text]="'Sign in'"
+    [attr.aria-label]="'miniLogin.signInRegister' | cxTranslate"
+    [routerUrl]="{ cxRoute: 'login' } | cxUrl"
+  >
+  </st-link>
+</ng-template>

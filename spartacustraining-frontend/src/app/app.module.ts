@@ -6,18 +6,38 @@ import { StoreModule } from "@ngrx/store";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpartacusModule } from './spartacus/spartacus.module';
+import {
+  GenericLinkModule,
+  GlobalMessageComponentModule,
+  MediaModule,
+  OutletRefModule,
+  PageComponentModule,
+  PageLayoutModule,
+  PageSlotModule
+} from "@spartacus/storefront";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    OutletRefModule,
     AppRoutingModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    SpartacusModule
+    SpartacusModule,
+    PageComponentModule,
+    PageSlotModule,
+    NgbModule,
+    PageLayoutModule,
+    GlobalMessageComponentModule,
+    MediaModule,
+    GenericLinkModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
