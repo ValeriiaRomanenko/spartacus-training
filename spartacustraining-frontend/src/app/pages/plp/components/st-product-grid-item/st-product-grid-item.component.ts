@@ -10,6 +10,8 @@ import {
 } from "@spartacus/core";
 import {filter, take} from "rxjs/operators";
 
+// import { ActiveCartFacade } from '@spartacus/cart';
+
 @Component({
   selector: 'st-product-grid-item',
   templateUrl: './st-product-grid-item.component.html',

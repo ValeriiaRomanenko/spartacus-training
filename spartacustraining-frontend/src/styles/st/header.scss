@@ -66,9 +66,11 @@
 
     .NavigationBar {
       min-height: unset;
-      flex: 0;
+      flex: 1;
 
       cx-navigation-ui.flyout {
+        flex-flow: row wrap;
+
         > nav {
           margin-right: 25px;
 

@@ -14,7 +14,8 @@ import {
   DIALOG_TYPE,
   LayoutConfig,
   layoutConfig,
-  mediaConfig
+  mediaConfig,
+  ViewConfig
 } from '@spartacus/storefront';
 import { environment } from '../../environments/environment';
 import { stLayoutSlotsConfig } from './config/st-layout-slots.config';
@@ -77,6 +78,15 @@ import { StRegisterModalComponent } from "../pages/register";
     }),
     provideConfig(<CmsConfig>{
       cmsComponents: stCmsComponentsConfig
+    }),
+    provideConfig(<ViewConfig>{
+      view: {
+        infiniteScroll: {
+          active: true,
+          // productLimit: 10,
+          showMoreButton: true,
+        },
+      },
     }),
     provideConfig(<FeaturesConfig>{
       features: {

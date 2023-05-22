@@ -6,7 +6,7 @@
           <div class="cx-sorting top">
             <div class="row">
               <st-refinement-facet></st-refinement-facet>
-              <label class="form-group cx-sort-dropdown col-12 col-lg-4 mr-auto">
+              <label class="form-group cx-sort-dropdown col-12 col-lg-3 mr-auto">
                 <cx-sorting
                   [sortOptions]="model.sorts"
                   (sortListEvent)="sortList($event)"
@@ -36,9 +36,7 @@
               </div>
             </div>
           </div>
-          <p *ngIf="model?.products" class="st-total-results my-3">
-            {{ model?.products.length}} total results.
-          </p>
+
           <div class="cx-product-container">
             <!-- Product list when using pagination -->
             <ng-container *ngIf="!isInfiniteScroll; else infiniteScroll">
@@ -73,7 +71,7 @@
           <div class="cx-sorting bottom mt-3">
             <div class="row">
               <st-refinement-facet></st-refinement-facet>
-              <label class="form-group cx-sort-dropdown col-12 col-lg-4 mr-auto">
+              <label class="form-group cx-sort-dropdown col-12 col-lg-3 mr-auto">
                 <cx-sorting
                   [sortOptions]="model.sorts"
                   (sortListEvent)="sortList($event)"

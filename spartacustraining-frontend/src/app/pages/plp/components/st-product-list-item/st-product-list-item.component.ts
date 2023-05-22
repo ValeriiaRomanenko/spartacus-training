@@ -34,6 +34,7 @@ export class StProductListItemComponent implements OnInit, OnChanges {
   constructor(private _productListItemContextSource: ProductListItemContextSource) { }
 
   ngOnChanges(changes?: SimpleChanges): void {
+    console.log(changes);
     if (changes?.product) {
       this._productListItemContextSource.product$.next(this.product);
     }

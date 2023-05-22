@@ -16,9 +16,9 @@
     <div class="st-actions-container">
       <ng-template [cxOutlet]="ProductListOutlets.ITEM_ACTIONS">
         <ng-container *ngIf="variants?.options?.length; else addToCartBtn">
-          <div class="st-sizes">
+          <div class="st-sizes text-center">
             <button *ngFor="let v of variants?.options"
-                    class="btn st-size-btn"
+                    class="btn st-size-btn st-btn-primary"
                     value="{{ v.code }}"
                     [class.st-selected]="v.code === product?.code"
                     (click)="addToCart($event.target?.value)"
@@ -55,6 +55,15 @@
         {{ product.price?.formattedValue }}
       </div>
       <span class="material-icons-outlined">favorite_border</span>
+    </div>
+
+    <div class="st-quantity">
+      <cx-add-to-cart
+        *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'"
+        [showQuantity]="true"
+        [product]="product"
+        disabled="true"
+      ></cx-add-to-cart>
     </div>
   </ng-template>
 

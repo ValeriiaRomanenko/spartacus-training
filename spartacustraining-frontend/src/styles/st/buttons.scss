@@ -7,6 +7,17 @@
     border-color: var(--cx-color-primary);
     filter: brightness(calc(117 / 100));
   }
+
+  &.disabled,
+  &:disabled {
+    background-color: var(--cx-color-primary);
+    border-color: var(--cx-color-primary);
+
+    &:hover {
+      border-color: var(--cx-color-primary);
+      @include cx-darken(100);
+    }
+  }
 }
 
 .st-btn-secondary {
