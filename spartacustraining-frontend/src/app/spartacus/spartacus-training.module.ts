@@ -8,6 +8,8 @@ import {
   StOrderSummaryModule,
   StPlpModule
 } from '../pages';
+import { SharedModule } from "../shared/shared.module";
+import { LayoutModule } from "../layout/layout.module";
 
 @NgModule({
   declarations: [],

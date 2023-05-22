@@ -21,13 +21,24 @@
         </div>
       </div>
 
-      <div class="st-data d-flex flex-row flex-nowrap" *ngFor="let param of item?.product.baseOptions[0].selected.variantOptionQualifiers">
-          <div class="cx-label mr-2">
-            {{ param.name }}:
-          </div>
-          <div class="cx-value">
-            {{ param.value }}
-          </div>
+      <ng-container *ngIf="item?.product?.baseOptions[0]?.selected?.variantOptionQualifiers as variantOptions">
+        <div class="st-data d-flex flex-row flex-nowrap" *ngFor="let param of variantOptions">
+            <div class="cx-label mr-2">
+              {{ param.name }}:
+            </div>
+            <div class="cx-value">
+              {{ param.value }}
+            </div>
+        </div>
+      </ng-container>
+
+      <div *ngIf="item?.product.manufacturer" class="cx-manufacturer d-flex flex-row flex-nowrap">
+        <div class="cx-label mr-2">
+          Manufacturer:
+        </div>
+        <div class="cx-value">
+          {{ item?.product.manufacturer }}
+        </div>
       </div>
 
       <div *ngIf="isProductOutOfStock(item?.product)" class="cx-availability">
