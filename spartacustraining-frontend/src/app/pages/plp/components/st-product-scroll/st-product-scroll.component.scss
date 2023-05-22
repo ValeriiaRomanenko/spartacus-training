@@ -1,0 +1,20 @@
+:host {
+  .cx-single-btn-container,
+  .cx-double-btn-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 20px;
+
+    .btn-block.btn-action {
+      width: 30%;
+      margin: 0;
+
+      &:hover {
+        background-color: var(--cx-color-background);
+        border-color: var(--cx-color-primary-hover);
+        color: var(--cx-color-primary-hover);
+      }
+    }
+  }
+}

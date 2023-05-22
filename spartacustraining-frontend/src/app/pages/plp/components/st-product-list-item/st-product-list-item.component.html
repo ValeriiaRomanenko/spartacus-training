@@ -1,11 +1,7 @@
-<div class="st-cart mb-4">
+<div class="st-cart">
   <div class="row">
     <div class="col-12 col-md-4">
-      <a
-        [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
-        class="cx-product-image-container"
-        tabindex="-1"
-      >
+      <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl" class="cx-product-image-container" tabindex="-1">
         <cx-media
           class="cx-product-image"
           [container]="product.images?.PRIMARY"
@@ -15,32 +11,44 @@
       </a>
     </div>
     <div class="col-12 col-md-8">
-      <a
-        [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
-        class="cx-product-name"
-      >
-        <h2 [innerHtml]="product.nameHtml"></h2>
-      </a>
+      <div class="row">
+        <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl" class="cx-product-name col-12 col-md-5">
+          <h2 [innerHtml]="product.nameHtml"></h2>
+        </a>
+      </div>
 
       <ng-template [cxOutlet]="ProductListOutlets.ITEM_DETAILS">
-        <div class="col-12 col-md-8">
-          <p class="cx-product-summary" [innerHtml]="product.summary">
+        <div class="row">
+          <p class="cx-product-summary col-12 col-md-8" [innerHtml]="product.summary">
             {{ product.summary }}
           </p>
         </div>
       </ng-template>
 
       <div class="row">
+        <div class="cx-product-price col-12 col-md-5" [attr.aria-label]="'productDetails.productPrice' | cxTranslate">
+          {{ product.price?.formattedValue }}
+        </div>
+      </div>
+
+      <div *ngIf="variants?.options?.length" class="row mt-3">
         <div class="col-12 col-md-5">
           <cx-product-variant-size-selector [product]="product" [variants]="variants"></cx-product-variant-size-selector>
         </div>
       </div>
-      <div class="row justify-content-end">
-        <div class="col-12 col-md-4 ">
+
+      <div *ngIf="product.averageRating" class="row">
+        <div class="col-12 col-md-5 my-3">
+          <cx-star-rating [rating]="product?.averageRating"></cx-star-rating>
+        </div>
+      </div>
+
+      <div class="row justify-content-end {{ !!variants?.options?.length ? 'st-actions' : 'st-actions__qty'}}">
+        <div class="col-12">
           <ng-template [cxOutlet]="ProductListOutlets.ITEM_ACTIONS">
             <cx-add-to-cart
               *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'"
-              [showQuantity]="false"
+              [showQuantity]="!variants?.options?.length"
               [product]="product"
             ></cx-add-to-cart>
           </ng-template>
@@ -48,5 +56,4 @@
       </div>
     </div>
   </div>
-
 </div>

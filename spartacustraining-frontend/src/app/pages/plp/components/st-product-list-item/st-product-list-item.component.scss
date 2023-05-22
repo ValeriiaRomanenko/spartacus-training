@@ -1,16 +1,53 @@
 st-product-list-item {
   display: block;
   margin-bottom: 20px;
-  padding: 10px 15px;
+  padding: 20px 15px;
 
   &:hover {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.4s;
   }
 
+  .cx-product-image {
+    height: 30vh;
+    text-align: center;
+  }
+
   .cx-product-name {
     h2 {
       font-size: 19px;
+    }
+  }
+
+  cx-add-to-cart {
+    form {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: baseline;
+      justify-content: end;
+
+      .quantity {
+        margin-bottom: 0;
+
+        label {
+          display: none;
+        }
+      }
+
+      button.btn-primary {
+        width: max-content;
+        padding: 0 35px;
+      }
+    }
+  }
+
+  .st-actions {
+    &__qty {
+      cx-add-to-cart {
+        form {
+          justify-content: space-between;
+        }
+      }
     }
   }
 }

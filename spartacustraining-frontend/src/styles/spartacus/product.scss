@@ -1,11 +1,12 @@
 @import "@spartacus/product";
 
-
+cx-page-layout.ProductListPageTemplate,
 cx-page-layout.ProductGridPageTemplate {
   > .ProductLeftRefinements {
     display: none;
   }
 
+  > .ProductListSlot,
   > .ProductGridSlot {
     &,
     .container {
