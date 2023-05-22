@@ -1,1 +1,36 @@
 @import "@spartacus/product";
+
+
+cx-page-layout.ProductGridPageTemplate {
+  > .ProductLeftRefinements {
+    display: none;
+  }
+
+  > .ProductGridSlot {
+    &,
+    .container {
+      max-width: 100%;
+      padding: 0 30px;
+
+      st-product-list {
+        cx-product-view {
+          button {
+            &.cx-product-layout {
+              border: 1px solid var(--cx-color-inverse);
+
+              &:hover {
+                background-color: var(--cx-color-primary-hover);
+              }
+
+              .fas {
+                font-size: 18px;
+                color: var(--cx-color-inverse);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

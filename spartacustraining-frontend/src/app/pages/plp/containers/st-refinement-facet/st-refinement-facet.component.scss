@@ -1,0 +1,62 @@
+st-refinement-facet {
+  .btn-action {
+    border-width: 1px;
+    max-width: 48px;
+
+    &:hover {
+      background-color: var(--cx-color-primary-hover);
+    }
+  }
+}
+
+cx-facet-list {
+  &.dialog {
+    justify-content: start;
+    transition: none;
+
+    > .inner {
+      width: 40vw;
+      height: 100%;
+      overflow: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+cx-sorting {
+  .ng-select {
+    .ng-select-container {
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid black;
+    }
+
+    .ng-dropdown-panel {
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+  }
+}
+
+cx-active-facets {
+  padding: 0;
+
+  h4 {
+    flex: unset;
+    margin: 0;
+    margin-right: 15px;
+    align-self: center;
+  }
+
+  a {
+    color: var(--cx-color-text);
+    background-color: var(--cx-color-primary);
+    border-radius: 30px;
+    max-height: 50px;
+
+    &:hover {
+      color: var(--cx-color-text);
+      background-color: var(--cx-color-primary-hover);
+    }
+  }
+}

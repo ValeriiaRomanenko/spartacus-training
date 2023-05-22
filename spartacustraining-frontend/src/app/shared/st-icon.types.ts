@@ -10,4 +10,5 @@ export enum StIconTypes {
   bookmarks = 'bookmarks',
   saved_cart = 'folder_special',
   export = 'file_upload',
+  filter = 'tune',
 }

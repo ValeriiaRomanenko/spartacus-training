@@ -1,48 +1,61 @@
 <div class="st-cart mb-4">
-  <a
-    [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
-    class="cx-product-image-container"
-    tabindex="-1"
-  >
-    <cx-media
-      class="cx-product-image"
-      [container]="product.images?.PRIMARY"
-      format="product"
-      [alt]="product.summary"
-    ></cx-media>
-  </a>
+  <div class="st-product-wrapper">
+    <a
+      [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
+      class="cx-product-image-container"
+      tabindex="-1"
+    >
+      <cx-media
+        class="cx-product-image"
+        [container]="product.images?.PRIMARY"
+        format="product"
+        [alt]="product.summary"
+      ></cx-media>
+    </a>
+
+    <div class="st-actions-container">
+      <ng-template [cxOutlet]="ProductListOutlets.ITEM_ACTIONS">
+        <ng-container *ngIf="variants?.options?.length; else addToCartBtn">
+          <div class="st-sizes">
+            <button *ngFor="let v of variants?.options"
+                    class="btn st-size-btn"
+                    value="{{ v.code }}"
+                    [class.st-selected]="v.code === product?.code"
+                    (click)="addToCart($event.target?.value)"
+            >
+              {{ getVariantOptionValue(v.variantOptionQualifiers) }}
+            </button>
+          </div>
+        </ng-container>
+        <ng-template #addToCartBtn>
+          <cx-add-to-cart
+            *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'; else notAvailable"
+            [showQuantity]="false"
+            [product]="product"
+            disabled="true"
+          ></cx-add-to-cart>
+          <ng-template #notAvailable>
+            <button type="submit" class="btn btn-primary btn-block" disabled> Out of stock</button>
+          </ng-template>
+        </ng-template>
+      </ng-template>
+    </div>
+  </div>
   <a
     [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
     class="cx-product-name"
-    [innerHTML]="product.nameHtml"
+    [innerHTML]="product.name"
   ></a>
-
   <ng-template [cxOutlet]="ProductListOutlets.ITEM_DETAILS">
-    <div class="cx-product-rating">
-      <cx-star-rating
-        *ngIf="product.averageRating"
-        [rating]="product?.averageRating"
-      ></cx-star-rating>
-      <div *ngIf="!product.averageRating">
-        {{ 'productDetails.noReviews' | cxTranslate }}
-      </div>
-    </div>
-    <div class="cx-product-price-container">
+    <div class="cx-product-price-container d-flex flex-nowrap justify-content-between">
       <div
         class="cx-product-price"
         [attr.aria-label]="'productDetails.productPrice' | cxTranslate"
       >
         {{ product.price?.formattedValue }}
       </div>
+      <span class="material-icons-outlined">favorite_border</span>
     </div>
-  </ng-template>
-
-  <ng-template [cxOutlet]="ProductListOutlets.ITEM_ACTIONS">
-    <cx-add-to-cart
-      *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'"
-      [showQuantity]="false"
-      [product]="product"
-    ></cx-add-to-cart>
   </ng-template>
 
 </div>
