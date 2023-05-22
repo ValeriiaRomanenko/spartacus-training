@@ -1,5 +1,14 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ProductListItemContext, ProductListItemContextSource, ProductListOutlets } from '@spartacus/storefront';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
+import {ProductListItemContext, ProductListItemContextSource, ProductListOutlets} from '@spartacus/storefront';
+import {BaseOption} from "@spartacus/core";
 
 @Component({
   selector: 'st-product-list-item',
@@ -12,12 +21,15 @@ import { ProductListItemContext, ProductListItemContextSource, ProductListOutlet
       provide: ProductListItemContext,
       useExisting: ProductListItemContextSource,
     },
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
-export class StProductListItemComponent implements OnChanges {
+export class StProductListItemComponent implements OnInit, OnChanges {
 
   readonly ProductListOutlets = ProductListOutlets;
   @Input() product: any;
+
+  variants: BaseOption;
 
   constructor(private _productListItemContextSource: ProductListItemContextSource) { }
 
@@ -25,5 +37,9 @@ export class StProductListItemComponent implements OnChanges {
     if (changes?.product) {
       this._productListItemContextSource.product$.next(this.product);
     }
+  }
+
+  ngOnInit() {
+    this.variants = { options: this.product.variantOptions }
   }
 }

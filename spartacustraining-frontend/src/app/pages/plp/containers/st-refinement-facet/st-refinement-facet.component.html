@@ -3,11 +3,10 @@
   class="btn btn-action btn-block dialog-trigger"
   (click)="launch()"
 >
-  <cx-icon [type]="iconTypes.FILTER"></cx-icon>
-  {{ 'productList.filterBy.label' | cxTranslate }}
+  <span class="material-icons-outlined">tune</span>
 </button>
 
-<cx-active-facets></cx-active-facets>
+<!--<cx-active-facets></cx-active-facets>-->
 
 <cx-facet-list
   *ngIf="isOpen$ | async"

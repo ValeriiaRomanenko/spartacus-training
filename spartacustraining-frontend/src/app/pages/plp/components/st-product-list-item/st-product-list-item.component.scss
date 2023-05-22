@@ -1,0 +1,28 @@
+st-product-list-item {
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+
+  &:hover {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s;
+  }
+
+  .cx-product-name {
+    h2 {
+      font-size: 19px;
+    }
+  }
+}
+
+cx-product-variant-size-selector {
+  .variant-select {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+  }
+
+  .size-guide {
+    display: none;
+  }
+}
