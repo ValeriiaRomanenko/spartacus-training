@@ -50,6 +50,18 @@ st-product-list-item {
       }
     }
   }
+
+  .st-item-actions {
+    display: flex;
+    flex-flow: column;
+
+    st-add-to-comparison {
+      align-self: end;
+      width: max-content;
+      top: -50%;
+      transform: translateY(50%);
+    }
+  }
 }
 
 cx-product-variant-size-selector {

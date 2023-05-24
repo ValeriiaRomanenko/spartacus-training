@@ -1,8 +1,19 @@
 <button
-  *ngIf="productCode$ | async"
+  *ngIf="productCode$ | async as productCode"
   class="btn btn-primary add_btn btn-block"
   type="button"
+  title="Add to comparison"
+  [cxPopover]="popoverContent"
+  [cxPopoverOptions]="popoverOptions"
   (click)="addToComparison()"
 >
-  {{ 'add to comparison' }}
+  <ng-container *ngIf="iconBtn; else text">
+    <span class="material-icons-outlined">compare</span>
+  </ng-container>
+  <ng-template #text>{{ 'add to comparison' }}</ng-template>
 </button>
+
+<ng-template #popoverContent>
+  <span>{{ product.name }} was added to comparison list.</span>
+  <a href='/comparison/products' class="d-flex mt-3">Go to comparison</a>
+</ng-template>

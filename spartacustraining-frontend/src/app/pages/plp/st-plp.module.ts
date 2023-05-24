@@ -26,6 +26,7 @@ import { StRefinementFacetComponent } from './containers';
 import { SharedModule } from "../../shared/shared.module";
 import { ProductVariantSizeSelectorModule, ProductVariantStyleSelectorModule } from "@spartacus/product/variants/components";
 import { CartQuickOrderFormModule } from "@spartacus/cart/quick-order/components";
+import { StComparisonModule } from "../comparison/st-comparison.module";
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { CartQuickOrderFormModule } from "@spartacus/cart/quick-order/components
         AddToWishListModule,
         ProductVariantStyleSelectorModule,
         ProductVariantSizeSelectorModule,
-        CartQuickOrderFormModule
+        CartQuickOrderFormModule,
+        StComparisonModule
     ]
 })
 export class StPlpModule { }
