@@ -1,139 +1,103 @@
-div.comparisontable{
-  margin-left: 1em;
-  margin-right: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px #ccc solid;
-  margin-bottom: 50px;
-}
+:host {
+  .st-comparison {
+    &__table {
+      &-header {
+        th {
+          vertical-align: top;
+          position: relative;
+          width: 20vw;
+          min-width: 200px;
+        }
 
-div.comparisontable img{
-  max-width: 70%;
-  width: auto;
-  height: auto;
-}
+        .st-item-info {
+          > * {
+            flex: 1 1 100%;
+          }
 
+          .st-comparison__item-image {
+            flex: 2 0 100%;
+          }
 
-div.comparisontable ul.row{
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  flex: 1;
-  width: 100%;
-  flex-wrap: wrap;
-}
+          .st-remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
 
-div.comparisontable ul.row li.property{
-  flex: 1;
-  padding: 10px;
-  border-bottom: 1px #ccc solid;
-  border-right: 1px #ccc solid;
-}
+            &:hover {
+              color: var(--cx-color-primary);
+            }
+          }
 
-div.comparisontable ul.row li.legend{
-  border-right: 1px #ccc solid;
-  border-bottom: 1px #ccc solid;
-  font-weight: bold;
-  width: 200px;
-}
+          .st-link {
+            cursor: pointer;
+          }
+        }
+      }
 
-div.comparisontable ul.row li:last-of-type{
-}
+      &-body {
+        td {
+          vertical-align: top;
+          padding: 0;
 
-div.comparisontable ul.row li{
-  text-align: center;
-}
+          .card {
+            border: none;
+          }
 
-/* very last row */
-div.comparisontable ul.row:last-of-type li{
-  text-align: center;
-  border-bottom: none;
-  box-shadow: 0 6px 6px rgba(0,0,0,0.23);
-}
+          .card-header {
+            border-right: 1px solid white;
+            background-color: var(--cx-color-secondary);
+          }
 
-div.comparisontable a.calltoaction{
-  color: white;
-  background: #e12525;
-  display: inline-block;
-  padding: 8px 10px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin: .1em auto;
-}
+          .empty {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            padding: 30px 0;
+          }
+        }
 
-div.comparisontable a.calltoaction:hover{
-  background: #d11212;
-}
+        tr:hover {
+          .card {
+            background-color: #f4f4f4;
+          }
+        }
 
-@media screen and (max-width:650px){
+        .st-classification{
+          &__name {
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            background-color: var(--cx-color-primary);
+          }
 
-  div.comparisontable ul.row{
-    flex-direction: column;
-  }
+          &__data {
+            .list-group {
+              padding-left: 10px;
 
-  div.comparisontable img{
-    width: auto;
-    height: auto;
-  }
+              &-item {
+                &:not(.list-icon) {
+                  list-style: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
-  div.comparisontable ul.row li{
-    margin-right: 0;
-    flex: auto;
-    width: auto;
-  }
+    &__item-image {
+      flex-basis: 100%;
+      text-align: center;
 
-  /* first and last cell within legend column */
-  div.comparisontable ul.row:last-of-type li.legend{
-    display: none;
-  }
+      img {
+        height: 100%;
+        max-height: 150px;
+      }
+    }
 
-  div.comparisontable ul.row li.legend{
-    width: auto;
-  }
-}
+    &__item-property {
 
-.comparison-value {
-  list-style: none;
-  li {
-    &::before {
-      content: "-";
     }
   }
-}
-
-div.empty{
-  text-align: center;
-  color: red;
-}
-
-.lds-dual-ring {
-  display: inline-block;
-  width: 125px;
-  height: 125px;
-  padding-left: 500px;
-}
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 104px;
-  height: 104px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid rgb(248, 3, 3) ;
-  border-color: rgb(248, 3, 3) transparent rgb(248, 3, 3)  transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-img:hover {
-  cursor: pointer;
 }

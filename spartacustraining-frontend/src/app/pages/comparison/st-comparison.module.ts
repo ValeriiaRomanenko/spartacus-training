@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConfigModule } from '@spartacus/core';
+import { ConfigModule, UrlModule } from '@spartacus/core';
 
 import { ComparisonProductService } from './services';
 import { StProductComparisonComponent } from './containers';
 import { StAddToComparisonComponent } from './components';
+import { PopoverModule, StarRatingModule } from "@spartacus/storefront";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,13 @@ import { StAddToComparisonComponent } from './components';
           component: StProductComparisonComponent
         }
       }
-    })
+    }),
+    PopoverModule,
+    UrlModule,
+    StarRatingModule
+  ],
+  exports: [
+    StAddToComparisonComponent
   ],
   providers: [
     {

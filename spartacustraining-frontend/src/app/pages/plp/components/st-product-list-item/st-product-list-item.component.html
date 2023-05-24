@@ -44,8 +44,9 @@
       </div>
 
       <div class="row justify-content-end {{ !!variants?.options?.length ? 'st-actions' : 'st-actions__qty'}}">
-        <div class="col-12">
+        <div class="st-item-actions col-12">
           <ng-template [cxOutlet]="ProductListOutlets.ITEM_ACTIONS">
+            <st-add-to-comparison [product]="product" [iconBtn]="true"></st-add-to-comparison>
             <cx-add-to-cart
               *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'"
               [showQuantity]="!variants?.options?.length"

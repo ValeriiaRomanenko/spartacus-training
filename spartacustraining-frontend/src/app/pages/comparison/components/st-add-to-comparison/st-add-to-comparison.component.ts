@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { GlobalMessageService, GlobalMessageType, Product, ProductService, RoutingService } from '@spartacus/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter, map, switchMap, take } from 'rxjs/operators';
 import { ComparisonProductService } from '../../services';
+import { PopoverOptions } from "@spartacus/storefront";
 
 @Component({
   selector: 'st-add-to-comparison',
@@ -12,9 +13,19 @@ import { ComparisonProductService } from '../../services';
 })
 export class StAddToComparisonComponent implements OnInit, OnDestroy {
 
+  @Input() product?: Product;
+  @Input() iconBtn?: boolean;
+
   private _productCodeSub$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   productCode$: Observable<string> = this._productCodeSub$.asObservable();
+
+  popoverOptions: PopoverOptions = {
+    placement: 'top-right',
+    autoPositioning: true,
+    displayCloseButton: true,
+    positionOnScroll: true,
+  }
 
   constructor(
     private _routingService: RoutingService,
@@ -24,11 +35,7 @@ export class StAddToComparisonComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this._getProduct()
-      .pipe(filter(Boolean))
-      .subscribe((product: Product) => {
-        this._productCodeSub$.next(product.code);
-      });
+   this._setProductCode();
   }
 
   addToComparison() {
@@ -42,6 +49,20 @@ export class StAddToComparisonComponent implements OnInit, OnDestroy {
           'Product added to comparison',
           GlobalMessageType.MSG_TYPE_CONFIRMATION
         );
+      });
+  }
+
+  private _setProductCode(): void {
+    if (!!this.product) {
+      this._productCodeSub$.next(this.product.code);
+      return;
+    }
+
+    this._getProduct()
+      .pipe(filter(Boolean))
+      .subscribe((product: Product) => {
+        this.product = product;
+        this._productCodeSub$.next(product.code);
       });
   }
 

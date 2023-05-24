@@ -25,7 +25,7 @@ function personifyForm() {
         }
     });
 
-    $("input[name='customerName']").keyup(function (e) {
+    $("input[name='customerName']").keydown(function (e) {
         $("input[name='customerId']").val("");
         validateNewAccount(this);
         $(this).removeData("hover");
@@ -224,6 +224,8 @@ function addASMHandlers() {
                     event.preventDefault();
                     return;
                 }
+                // Stop the propagation of this event to prevent the event handler of keydown from processing the enter when an item was selected by that enter
+                event.originalEvent.originalEvent.stopPropagation();
                 toggleStartSessionButton(this, true);
                 $(this).data('hover', {
                     name: ui.item.value,
