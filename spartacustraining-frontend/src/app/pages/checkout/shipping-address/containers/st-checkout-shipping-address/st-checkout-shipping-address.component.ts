@@ -106,7 +106,8 @@ export class StCheckoutShippingAddressComponent implements OnInit, OnDestroy {
             textSelected
           ),
         }))
-      )
+      ),
+      tap(data => console.log(data)),
     );
   }
 

@@ -1,5 +1,27 @@
 form {
   .st-form-control {
+     &__select {
+       input::placeholder {
+         color: green;
+       }
+
+       .ng-select-container {
+         border: none;
+         border-bottom: 1px solid var(--cx-color-inverse);
+         border-radius: 0;
+       }
+
+       &.ng-select-opened {
+         border: 1px solid var(--cx-color-inverse);
+         border-bottom: none;
+       }
+
+       ng-dropdown-panel {
+         border: 1px solid var(--cx-color-inverse);
+         border-top: none;
+       }
+     }
+
      &__input {
        border: none;
        border-bottom: 1px solid var(--cx-color-inverse);

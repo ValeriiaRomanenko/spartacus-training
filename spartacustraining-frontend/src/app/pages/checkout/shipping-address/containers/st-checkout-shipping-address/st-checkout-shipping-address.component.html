@@ -1,9 +1,9 @@
 <ng-container *ngIf="cards$ | async as cards">
-  <h2 class="cx-checkout-title d-none d-lg-block d-xl-block mt-2">
+  <h2 class="cx-checkout-title d-none d-lg-block d-xl-block mt-2 mb-4 text-center">
     {{ 'checkoutAddress.shippingAddress' | cxTranslate }}
   </h2>
 
-  <div class="st-cart mb-2">
+  <div class="st-cart mb-2 p-3">
     <ng-container *ngIf="!forceLoader && !(isLoading$ | async); else loading">
       <ng-container
         *ngIf="
@@ -11,13 +11,10 @@
         else newAddressForm
       "
       >
-        <p class="cx-checkout-text">
-          {{ 'checkoutAddress.selectYourShippingAddress' | cxTranslate }}
-        </p>
-        <div class="cx-checkout-btns row" *ngIf="!isAccountPayment">
-          <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="cx-checkout-btns row justify-content-center mb-3" *ngIf="!isAccountPayment">
+          <div class="col-sm-12 col-md-12 col-lg-4">
             <button
-              class="btn btn-block btn-action"
+              class="btn btn-block st-btn-secondary"
               (click)="showNewAddressForm()"
             >
               {{ 'checkoutAddress.addNewAddress' | cxTranslate }}
@@ -25,9 +22,9 @@
           </div>
         </div>
 
-        <div class="cx-checkout-body row mt-2 mb-2">
+        <div class="cx-checkout-body row my-5 justify-content-around">
           <div
-            class="cx-shipping-address-card col-md-12 col-lg-6"
+            class="cx-shipping-address-card col-md-12 col-lg-5"
             *ngFor="let card of cards; let i = index"
           >
             <div
@@ -44,15 +41,15 @@
           </div>
         </div>
 
-        <div class="cx-checkout-btns row">
-          <div class="col-md-12 col-lg-6">
-            <button class="cx-btn btn btn-block btn-action" (click)="back()">
+        <div class="cx-checkout-btns row justify-content-around px-5">
+          <div class="col-md-12 col-lg-4">
+            <button class="cx-btn btn btn-block st-btn-secondary" (click)="back()">
               {{ backBtnText | cxTranslate }}
             </button>
           </div>
-          <div class="col-md-12 col-lg-6">
+          <div class="col-md-12 col-lg-4">
             <button
-              class="cx-btn btn btn-block btn-primary"
+              class="cx-btn btn btn-block st-btn-primary"
               [disabled]="!selectedAddress?.id"
               (click)="next()"
             >
@@ -63,21 +60,21 @@
       </ng-container>
 
       <ng-template #newAddressForm>
-        <cx-address-form
+        <st-address-form
           *ngIf="cards.length; else initialAddressForm"
           [showTitleCode]="true"
           (backToAddress)="hideNewAddressForm(false)"
           (submitAddress)="addAddress($event)"
-        ></cx-address-form>
+        ></st-address-form>
         <ng-template #initialAddressForm>
-          <cx-address-form
+          <st-address-form
             [showTitleCode]="true"
             [setAsDefaultField]="!isGuestCheckout"
             [addressData]="selectedAddress"
             cancelBtnLabel="{{ backBtnText | cxTranslate }}"
             (backToAddress)="hideNewAddressForm(true)"
             (submitAddress)="addAddress($event)"
-          ></cx-address-form>
+          ></st-address-form>
         </ng-template>
       </ng-template>
     </ng-container>
