@@ -5,7 +5,7 @@ import { DeliveryMode } from '@spartacus/core';
 import { CheckoutDeliveryFacade } from '@spartacus/checkout/root';
 import { CheckoutConfigService, CheckoutStepService } from '@spartacus/checkout/components';
 import { Observable, Subscription } from 'rxjs';
-import { distinctUntilChanged, filter, map, takeWhile, withLatestFrom } from 'rxjs/operators';
+import {distinctUntilChanged, filter, map, takeWhile, tap, withLatestFrom} from 'rxjs/operators';
 
 @Component({
   selector: 'st-checkout-delivery-mode',
@@ -44,7 +44,8 @@ export class StCheckoutDeliveryModeComponent implements OnInit, OnDestroy {
           (current: DeliveryMode[], previous: DeliveryMode[]) => {
             return JSON.stringify(current) === JSON.stringify(previous);
           }
-        )
+        ),
+        tap(data => console.log(data))
       );
 
     // Reload delivery modes on error

@@ -1,55 +1,54 @@
 <div [formGroup]="mode">
-  <div class="row">
-    <div class="col-md-12 col-lg-9">
-      <h2 class="cx-checkout-title d-none d-lg-block d-xl-block mt-2">
-        {{ 'checkoutShipping.shippingMethod' | cxTranslate }}
-      </h2>
+  <div class="mb-5">
+    <h2 class="cx-checkout-title d-none d-lg-block d-xl-block mt-2">
+      {{ 'checkoutShipping.shippingMethod' | cxTranslate }}
+    </h2>
 
-      <div class="st-cart mb-2">
-        <ng-container
-          *ngIf="(supportedDeliveryModes$ | async)?.length; else loading"
-        >
-          <div
-            class="form-check"
-            *ngFor="let mode of supportedDeliveryModes$ | async"
+    <div class="st-cart mb-2 d-flex justify-content-around">
+      <ng-container
+        *ngIf="(supportedDeliveryModes$ | async)?.length; else loading"
+      >
+        <div class="form-check d-flex col-5" *ngFor="let mode of supportedDeliveryModes$ | async">
+          <input
+            class="form-check-input"
+            role="radio"
+            type="radio"
+            id="deliveryMode-{{ mode.code }}"
+            aria-checked="true"
+            (change)="changeMode(mode.code)"
+            [value]="mode.code"
+            formControlName="deliveryModeId"
+          />
+          <label
+            class="cx-delivery-label form-check-label form-radio-label d-flex w-100"
+            for="deliveryMode-{{ mode.code }}"
           >
-            <input
-              class="form-check-input"
-              role="radio"
-              type="radio"
-              id="deliveryMode-{{ mode.code }}"
-              aria-checked="true"
-              (change)="changeMode(mode.code)"
-              [value]="mode.code"
-              formControlName="deliveryModeId"
-            />
-            <label
-              class="cx-delivery-label form-check-label form-radio-label"
-              for="deliveryMode-{{ mode.code }}"
-            >
-              <div class="cx-delivery-mode">{{ mode.name }}</div>
+            <div class="col-8 ml-3">
+              <div class="cx-delivery-mode mb-2">{{ mode.name }}</div>
+              <div class="cx-delivery-details">{{ mode.description }}</div>
+            </div>
+            <div class="st-delivery__price col-4">
               <div class="cx-delivery-price">
                 {{ mode.deliveryCost.formattedValue }}
               </div>
-              <div class="cx-delivery-details">{{ mode.description }}</div>
-            </label>
-          </div>
-        </ng-container>
-      </div>
+            </div>
+          </label>
+        </div>
+      </ng-container>
     </div>
   </div>
 
   <div class="st-cart mb-2">
     <ng-container *ngIf="!continueButtonPressed; else loading">
-      <div class="row cx-checkout-btns">
-        <div class="col-md-12 col-lg-6">
-          <button class="btn btn-block btn-action" (click)="back()">
+      <div class="row cx-checkout-btns justify-content-center p-5 my-5">
+        <div class="col-md-12 col-lg-4">
+          <button class="btn btn-block st-btn-secondary" (click)="back()">
             {{ backBtnText | cxTranslate }}
           </button>
         </div>
-        <div class="col-md-12 col-lg-6">
+        <div class="col-md-12 col-lg-4">
           <button
-            class="btn btn-block btn-primary"
+            class="btn btn-block st-btn-primary"
             [disabled]="deliveryModeInvalid"
             (click)="next()"
           >
