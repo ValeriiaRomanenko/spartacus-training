@@ -51,6 +51,7 @@
                  type="number"
                  name="quantity"
                  min="0"
+                 [attr.disabled]="readonly"
                  [max]="getMax(item)"
                  [value]="quantityControl.value"
                  [formControl]="quantityControl"/>
@@ -75,7 +76,7 @@
       </ng-template>
     </td>
   </tr>
-  <tr class="st-actions-row">
+  <tr *ngIf="!readonly" class="st-actions-row">
     <td colspan="4">
       <!-- Item Bundle Details Outlet -->
       <ng-template [cxOutlet]="CartOutlets.ITEM_BUNDLE_DETAILS"> </ng-template>

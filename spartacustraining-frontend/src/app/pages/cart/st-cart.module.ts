@@ -27,7 +27,8 @@ import {SharedModule} from "../../shared/shared.module";
         StCartActionsComponent
     ],
     exports: [
-        StEmptyCartComponent
+        StEmptyCartComponent,
+        StCartItemsComponent
     ],
     imports: [
         CommonModule,

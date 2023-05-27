@@ -19,6 +19,10 @@ cx-page-layout.MultiStepCheckoutSummaryPageTemplate {
         border-top: 1px solid black;
       }
     }
+
+    cx-place-order {
+      padding: 15px;
+    }
   }
 
   cx-page-slot.BodyContent {
@@ -83,6 +87,55 @@ cx-page-layout.MultiStepCheckoutSummaryPageTemplate {
 
     .cx-shipping-address-card-inner {
       height: 100%;
+    }
+
+    st-review-order {
+      cx-card {
+        .cx-card-title {
+          border-bottom: 1px solid black;
+          padding: 10px 0;
+          text-align: center;
+          margin: 0 -20px;
+          background-color: var(--cx-color-primary-hover);
+          border-radius: 9px 9px 0 0;
+        }
+
+        .cx-card-container {
+          padding-top: 20px;
+        }
+
+        .card-body {
+          padding-top: 0;
+          border-radius: 10px;
+          border: 2px solid black;
+        }
+      }
+
+      .cx-review-summary-card {
+        position: relative;
+        margin-bottom: 15px;
+
+        .cx-review-summary-edit-step {
+          position: absolute;
+          display: none;
+          bottom: 8%;
+          right: 8%;
+          font-size: 20px;
+        }
+
+        &:hover {
+          .cx-review-summary-edit-step {
+            display: block;
+          }
+
+          cx-card {
+            .card-body {
+              border: 2px solid  var(--cx-color-primary);
+              background-color: #f7f7f7;
+            }
+          }
+        }
+      }
     }
   }
 

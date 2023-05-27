@@ -1,6 +1,6 @@
 <div class="cx-review">
   <!-- TITLE -->
-  <h2 class="cx-review-title d-none d-lg-block d-xl-block">
+  <h2 class="cx-review-title d-none d-lg-block d-xl-block text-center">
     {{ 'checkoutReview.review' | cxTranslate }}
   </h2>
 
@@ -210,11 +210,11 @@
         "
         ></cx-promotions>
 
-        <cx-cart-item-list
+        <st-cart-items
           [items]="entries"
           [readonly]="true"
           [promotionLocation]="promotionLocation"
-        ></cx-cart-item-list>
+        ></st-cart-items>
       </div>
     </ng-container>
   </div>
