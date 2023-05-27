@@ -40,7 +40,7 @@
 
   <div class="st-cart mb-2">
     <ng-container *ngIf="!continueButtonPressed; else loading">
-      <div class="row cx-checkout-btns justify-content-center p-5 my-5">
+      <div class="cx-checkout-btns row justify-content-around px-5 mt-5 pt-5">
         <div class="col-md-12 col-lg-4">
           <button class="btn btn-block st-btn-secondary" (click)="back()">
             {{ backBtnText | cxTranslate }}
